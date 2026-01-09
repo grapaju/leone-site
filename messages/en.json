@@ -1,0 +1,272 @@
+{
+  "home": {
+    "companyName": "Leone Pavan Developments",
+    "waitingMessage": "Awaiting instructions for homepage creation...",
+    "since": "Since 2004 • Balneário Camboriú"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "badge": "Since 2004 • Balneário Camboriú",
+    "title": "Building dreams since 2004",
+    "subtitle": "Projects designed to transform lives and enhance investments.",
+    "cta": "Explore our developments"
+  },
+  "projects": {
+    "title": "Our developments",
+    "subtitle": "Projects with intelligent design, strategic location and impeccable execution.",
+    "status": {
+      "completed": "Completed",
+      "inProgress": "Under Construction",
+      "launch": "Launch"
+    },
+    "cta": "View details",
+    "viewAll": "View all developments",
+    "items": {
+      "palazzoDelMare": {
+        "name": "Palazzo del Mare",
+        "location": "Bombinhas • SC",
+        "description": "27 steps from the beach sand. Excellent infrastructure and high-end finishes in a privileged location."
+      },
+      "miranteAtlantico": {
+        "name": "Mirante do Atlântico",
+        "location": "Balneário Camboriú • SC",
+        "description": "Magnificent ocean view 300 meters from the beach. Excellent leisure and living options in Pontal Norte."
+      }
+    }
+  },
+  "differentials": {
+    "title": "Why choose Leone Pavan",
+    "subtitle": "Two decades of excellence in luxury construction.",
+    "quality": {
+      "title": "Certified quality",
+      "description": "PBQP-H and ISO 9001 certifications guarantee excellence standards in all construction processes."
+    },
+    "team": {
+      "title": "Specialized team",
+      "description": "Architects and engineers with decades of experience in luxury developments."
+    },
+    "delivery": {
+      "title": "On-time delivery",
+      "description": "Strictly followed schedule, with technical planning and construction control."
+    },
+    "support": {
+      "title": "Dedicated after-sales",
+      "description": "Complete follow-up after key delivery, ensuring client peace of mind."
+    }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "subtitle": "We are ready to make your dream come true.",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+55 (47) 99999-9999",
+      "message": "Message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "address": "Address",
+      "addressValue": "Av. Atlântica, 123 - Downtown, Balneário Camboriú/SC",
+      "phone": "Phone",
+      "phoneValue": "+55 (47) 3367-1234",
+      "email": "Email",
+      "emailValue": "contact@leonepavan.com.br",
+      "hours": "Hours",
+      "hoursValue": "Monday to Friday: 8am to 6pm"
+    }
+  },
+  "aboutHome": {
+    "title": "About Leone Pavan",
+    "subtitle": "Tradition and innovation in luxury developments.",
+    "history": "Since 2004, Leone Pavan Developments has stood out in the Balneário Camboriú market for excellence in luxury construction. With a solid track record and commitment to quality, we deliver projects that transform lives and enhance investments.",
+    "mission": {
+      "title": "Mission",
+      "description": "Create luxury developments that exceed expectations, combining design, quality and prime location."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To be a reference in luxury developments, recognized for excellence and innovation in every project."
+    },
+    "values": {
+      "title": "Values",
+      "description": "Ethics, transparency, quality, commitment and customer satisfaction."
+    }
+  },
+  "footer": {
+    "tagline": "Luxury construction • timeless aesthetics",
+    "rights": "© 2004-2026 Leone Pavan Developments. All rights reserved.",
+    "social": {
+      "follow": "Follow us"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Who We Are",
+      "title": "Leone Pavan Developments",
+      "subtitle": "Commitment, quality and excellence since 2004.",
+      "intro": "Since 2004, when it started its activities, Leone Pavan Developments has taken a serious approach to every project. With highly qualified professionals, first-rate materials and state-of-the-art technology, we constantly evolve and refine our processes."
+    },
+    "intro": {
+      "text": "Since 2004, when it started its activities, Leone Pavan Developments has assumed a serious stance with each project executed. Operating in the construction market with highly qualified professionals, using first-rate raw materials and state-of-the-art technology, we evolve and improve our knowledge constantly."
+    },
+    "history": {
+      "title": "Our journey in construction",
+      "text": "Founded in May 2004 in Balneário Camboriú, Leone Construtora e Incorporadora — Leone Pavan Developments — blends industrial technology with handcrafted care. We operate on the Santa Catarina coast focusing on mid- and high-standard residential projects, leading the full cycle: technical site scouting, design, execution and delivery, with top-tier materials, qualified teams and architectural innovation to ensure safety, value and well-being.",
+      "timeline": {
+        "foundation": {
+          "year": "2004",
+          "text": "Foundation in Balneário Camboriú/SC, focused on residential projects."
+        },
+        "mirante": {
+          "year": "2009",
+          "text": "SPE for Mirante do Atlântico, a milestone in high-standard projects overlooking the sea."
+        },
+        "consolidation": {
+          "year": "2014",
+          "text": "Consolidation in BC with deliveries such as Vila Esperança and Portal dos Municípios."
+        },
+        "bombinhas": {
+          "year": "2018",
+          "text": "Expansion to Bombinhas with Palazzo del Mare, steps from the beach."
+        },
+        "today": {
+          "year": "2024",
+          "text": "Mature portfolio in SC, stronger digital presence and new launches around BC/Balneário Shopping."
+        }
+      },
+      "portfolio": {
+        "mirante": {
+          "title": "Mirante do Atlântico",
+          "description": "Sea views in Balneário Camboriú."
+        },
+        "palazzo": {
+          "title": "Palazzo del Mare",
+          "description": "High-standard project in Bombinhas, steps from the beach."
+        },
+        "portal": {
+          "title": "Portal dos Municípios",
+          "description": "Residential focused on family infrastructure."
+        },
+        "vila": {
+          "title": "Vila Esperança",
+          "description": "Condominium focused on exclusivity and privacy."
+        }
+      },
+      "portfolioLabel": "Portfolio",
+      "stats": {
+        "years": "Years of experience",
+        "projects": "Delivered developments",
+        "satisfaction": "Client satisfaction"
+      }
+    },
+    
+    "values": {
+      "title": "Mission, Vision and Values",
+      "items": {
+        "mission": {
+          "title": "Mission",
+          "description": "Build with technical excellence and ethics, turning investments into safe homes and projects that enhance Santa Catarina's urban landscape."
+        },
+        "vision": {
+          "title": "Vision",
+          "description": "Be recognized as the most reliable builder on the Santa Catarina coast, known for on-time delivery and careful finishing."
+        },
+        "values": {
+          "title": "Values",
+          "description": "Tradition, transparency in relationships, financial solidity, and construction rigor at every stage."
+        }
+      }
+    },
+    "differential": {
+      "title": "Why choose Leone Construtora?",
+      "text": "We go beyond key handover: our focus is on consistent, reliable real estate assets. Commitment to quality, transparency and responsibility to ensure peace of mind for investors and comfort for residents.",
+      "items": {
+        "locations": "Privileged locations: sites strategically positioned in areas with sound appreciation and established views across Santa Catarina’s main coastal cities.",
+        "quality": "Construction rigor and finishing: modern methods with careful detailing, recognized-brand materials and specialized workforce.",
+        "transparency": "Transparency and security: clear legal and document tracking at every stage, with ongoing reporting to investors.",
+        "sustainability": "Urban sustainability: projects designed to harmonize with surroundings, comply with environmental rules and foster responsible city development."
+      }
+    },
+    "balneario": {
+      "title": "Balneário Camboriú",
+      "text": "A city full of charms, Balneário Camboriú daily presents its residents and visitors with exuberant beauty. Natural landscapes ranging from beaches to Atlantic Forest, combined with excellent infrastructure, make the city a vibrant place full of life — an excellent choice both to live and invest."
+    },
+    "closing": {
+      "title": "Follow the Future of Our Story",
+      "text": "For more than two decades, Leone Construtora has transformed Santa Catarina's skyline with projects synonymous with safety and sophistication. We invite you to explore our delivered developments and upcoming launches, where every square meter is planned to exceed expectations and elevate your lifestyle.",
+      "cta": "Explore our developments"
+    }
+  },
+  "projectsPage": {
+    "hero": {
+      "title": "Our Developments",
+      "subtitle": "Over two decades building projects that transform the Santa Catarina coast. Each development is designed to offer quality, appreciation and well-being.",
+      "totalProjects": "Developments",
+      "completedProjects": "Completed"
+    },
+    "filters": {
+      "all": "All",
+      "completed": "Completed",
+      "inProgress": "Under Construction",
+      "launch": "Launch"
+    },
+    "status": {
+      "completed": "Completed",
+      "inProgress": "Under Construction",
+      "launch": "Launch"
+    },
+    "projectLabel": "Development",
+    "viewDetails": "View details",
+    "noProjects": "No developments found in this category.",
+    "projects": {
+      "miranteAtlantico": {
+        "name": "Mirante do Atlântico",
+        "location": "Balneário Camboriú • SC",
+        "description": "Magnificent ocean view 300 meters from the beach. Excellent leisure and living options in Pontal Norte."
+      },
+      "palazzoDelMare": {
+        "name": "Palazzo del Mare",
+        "location": "Bombinhas • SC",
+        "description": "27 steps from the beach sand. Excellent infrastructure and high standard finishing in a privileged location."
+      },
+      "portalMunicipios": {
+        "name": "Portal dos Municípios",
+        "location": "Balneário Camboriú • SC",
+        "description": "Strategic location with privileged view and high standard finishing in the heart of Balneário Camboriú."
+      },
+      "residencialNacoes": {
+        "name": "Residencial das Nações",
+        "location": "Balneário Camboriú • SC",
+        "description": "Modern design and contemporary architecture in a premium location in the center of BC."
+      }
+    }
+  },
+  "common": {
+    "readMore": "Learn more",
+    "seeMore": "See more",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try again"
+  }
+}

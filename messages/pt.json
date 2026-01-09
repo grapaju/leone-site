@@ -1,0 +1,298 @@
+{
+  "home": {
+    "companyName": "Leone Pavan Empreendimentos",
+    "waitingMessage": "Aguardando instruções para criação da home page...",
+    "since": "Desde 2004 • Balneário Camboriú"
+  },
+  "nav": {
+    "home": "Início",
+    "projects": "Empreendimentos",
+    "about": "Sobre",
+    "contact": "Contato",
+    "blog": "Blog"
+  },
+  "hero": {
+    "badge": "Desde 2004 • Balneário Camboriú",
+    "title": "Construindo sonhos desde 2004",
+    "subtitle": "Projetos pensados para transformar vidas e valorizar investimentos.",
+    "cta": "Conheça nossos empreendimentos"
+  },
+  "projects": {
+    "title": "Nossos empreendimentos",
+    "subtitle": "Projetos com design inteligente, localização estratégica e execução impecável.",
+    "status": {
+      "completed": "Concluído",
+      "inProgress": "Em obras",
+      "launch": "Lançamento"
+    },
+    "cta": "Ver detalhes",
+    "viewAll": "Ver todos os empreendimentos",
+    "items": {
+      "palazzoDelMare": {
+        "name": "Palazzo del Mare",
+        "location": "Bombinhas • SC",
+        "description": "A 27 passos da areia da praia. Excelente infraestrutura e alto padrão de acabamento em localização privilegiada."
+      },
+      "miranteAtlantico": {
+        "name": "Mirante do Atlântico",
+        "location": "Balneário Camboriú • SC",
+        "description": "Vista magnífica para o mar a 300 metros da praia. Excelentes opções de lazer e convivência no Pontal Norte."
+      },
+      "portalMunicipios": {
+        "name": "Portal dos Municípios",
+        "location": "Balneário Camboriú • SC",
+        "description": "Localização estratégica com vista privilegiada e acabamento de alto padrão no coração de Balneário Camboriú."
+      },
+      "residencialNacoes": {
+        "name": "Residencial das Nações",
+        "location": "Balneário Camboriú • SC",
+        "description": "Projeto residencial de alto padrão com design moderno e localização privilegiada no centro da cidade."
+      },
+      "vilaEsperanca": {
+        "name": "Vila Esperança",
+        "location": "Nova Esperança, BC • SC",
+        "description": "Condomínio fechado estilo vila tradicional com 8 casas térreas exclusivas e charme acolhedor."
+      }
+    }
+  },
+  "differentials": {
+    "title": "Por que escolher a Leone Pavan",
+    "subtitle": "Duas décadas de excelência em construção de alto padrão.",
+    "quality": {
+      "title": "Qualidade certificada",
+      "description": "Certificações PBQP-H e ISO 9001 garantem padrão de excelência em todos os processos construtivos."
+    },
+    "team": {
+      "title": "Equipe especializada",
+      "description": "Arquitetos e engenheiros com décadas de experiência em empreendimentos de alto padrão."
+    },
+      "portfolioLabel": "Portfólio",
+    "delivery": {
+      "title": "Entrega no prazo",
+      "description": "Cronograma rigorosamente cumprido, com planejamento técnico e controle de obra."
+    },
+    "support": {
+      "title": "Pós-venda dedicado",
+      "description": "Acompanhamento completo após a entrega das chaves, garantindo tranquilidade ao cliente."
+    }
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "subtitle": "Estamos prontos para realizar o seu sonho.",
+    "form": {
+      "name": "Nome completo",
+      "namePlaceholder": "Seu nome",
+      "email": "E-mail",
+      "emailPlaceholder": "seu@email.com",
+      "phone": "Telefone",
+      "phonePlaceholder": "(47) 99999-9999",
+      "message": "Mensagem",
+      "messagePlaceholder": "Como podemos ajudar?",
+      "submit": "Enviar mensagem",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Erro ao enviar mensagem. Tente novamente."
+    },
+    "info": {
+      "address": "Endereço",
+      "addressValue": "Av. Atlântica, 123 - Centro, Balneário Camboriú/SC",
+      "phone": "Telefone",
+      "phoneValue": "(47) 3367-1234",
+      "email": "E-mail",
+      "emailValue": "contato@leonepavan.com.br",
+      "hours": "Horário",
+      "hoursValue": "Segunda a Sexta: 8h às 18h"
+    }
+  },
+  "aboutHome": {
+    "title": "Sobre a Leone Pavan",
+    "subtitle": "Tradição e inovação em empreendimentos de alto padrão.",
+    "history": "Desde 2004, a Leone Pavan Empreendimentos se destaca no mercado de Balneário Camboriú pela excelência na construção de empreendimentos de alto padrão. Com uma trajetória sólida e compromisso com a qualidade, entregamos projetos que transformam vidas e valorizam investimentos.",
+    "mission": {
+      "title": "Missão",
+      "description": "Criar empreendimentos de alto padrão que superem expectativas, combinando design, qualidade e localização privilegiada."
+    },
+    "vision": {
+      "title": "Visão",
+      "description": "Ser referência em empreendimentos de luxo, reconhecida pela excelência e inovação em cada projeto."
+    },
+    "values": {
+      "title": "Valores",
+      "description": "Ética, transparência, qualidade, comprometimento e satisfação do cliente."
+    }
+  },
+  "footer": {
+    "tagline": "Construtora de alto padrão • estética atemporal",
+    "rights": "© 2004-2026 Leone Pavan Empreendimentos. Todos os direitos reservados.",
+    "social": {
+      "follow": "Siga-nos"
+    },
+    "legal": {
+      "privacy": "Política de Privacidade",
+      "terms": "Termos de Uso"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Quem Somos",
+      "title": "Leone Pavan Empreendimentos",
+      "subtitle": "Comprometimento, qualidade e excelência desde 2004.",
+      "intro": "Desde 2004, quando iniciou suas atividades, a Leone Pavan Empreendimentos assumiu uma postura de seriedade com cada empreendimento executado. Atuando no mercado da construção civil com profissionais altamente qualificados, utilizando matérias-primas de primeira linha e tecnologia de última geração, evoluímos e aprimoramos nossos conhecimentos constantemente."
+    },
+    "intro": {
+      "text": "Desde 2004, quando iniciou suas atividades, a Leone Pavan Empreendimentos assumiu uma postura de seriedade com cada empreendimento executado. Atuando no mercado da construção civil com profissionais altamente qualificados, utilizando matérias-primas de primeira linha e tecnologia de última geração, evoluímos e aprimoramos nossos conhecimentos constantemente."
+    },
+    "history": {
+      "title": "Nossa trajetória",
+      "text": "Fundada em maio de 2004 em Balneário Camboriú, a Leone Construtora e Incorporadora – Leone Pavan Empreendimentos – une tecnologia industrial e cuidado artesanal em cada obra. Atuamos no litoral catarinense com foco em residenciais de médio e alto padrão, conduzindo todo o ciclo: prospecção técnica de terrenos, projeto, execução e entrega, com materiais de primeira linha, equipe qualificada e inovação arquitetônica para garantir segurança, valorização e bem-estar.",
+      "timeline": {
+        "foundation": {
+          "year": "2004",
+          "text": "Fundação em Balneário Camboriú/SC, com foco em obras residenciais."}
+        ,"mirante": {
+          "year": "2009",
+          "text": "SPE para o Mirante do Atlântico, marco no segmento de alto padrão com vista para o mar."}
+        ,"consolidation": {
+          "year": "2014",
+          "text": "Consolidação em BC com entregas como Vila Esperança e Portal dos Municípios."}
+        ,"bombinhas": {
+          "year": "2018",
+          "text": "Expansão para Bombinhas com o Palazzo del Mare, a poucos passos da praia."}
+        ,"today": {
+          "year": "2024",
+          "text": "Portfólio maduro em SC, reforço digital e novos lançamentos no eixo BC/Balneário Shopping."}
+      },
+      "portfolio": {
+        "mirante": {
+          "title": "Mirante do Atlântico",
+          "description": "Vista para o mar em Balneário Camboriú."},
+        "palazzo": {
+          "title": "Palazzo del Mare",
+          "description": "Alto padrão em Bombinhas, a poucos passos da praia."},
+        "portal": {
+          "title": "Portal dos Municípios",
+          "description": "Residencial com infraestrutura familiar."},
+        "vila": {
+          "title": "Vila Esperança",
+          "description": "Condomínio voltado para exclusividade e privacidade."}
+      },
+      "portfolioLabel": "Portfólio",
+      "stats": {
+        "years": "Anos de experiência",
+        "projects": "Empreendimentos entregues",
+        "satisfaction": "Satisfação dos clientes"
+      }
+    },
+    
+    "values": {
+      "title": "Missão, Visão e Valores",
+      "items": {
+        "mission": {
+          "title": "Missão",
+          "description": "Construir com excelência técnica e ética, transformando investimentos em lares seguros e empreendimentos que valorizam o cenário urbano de Santa Catarina."
+        },
+        "vision": {
+          "title": "Visão",
+          "description": "Consolidar-se como a construtora mais confiável do litoral catarinense, reconhecida pela pontualidade e pelo cuidado nos acabamentos."
+        },
+        "values": {
+          "title": "Valores",
+          "description": "Tradição, transparência nas relações, solidez financeira e rigor construtivo em cada etapa."
+        }
+      }
+    },
+    "differential": {
+      "title": "Por que escolher a Leone Construtora?",
+      "text": "Vamos além da entrega de chaves: nosso foco é fornecer ativos imobiliários consistentes e confiáveis. Compromisso com qualidade, transparência e responsabilidade para garantir tranquilidade a quem investe e conforto a quem mora.",
+      "items": {
+        "locations": "Localizações privilegiadas: terrenos estrategicamente posicionados em áreas de boa valorização e vistas consolidadas nos principais balneários de Santa Catarina.",
+        "quality": "Rigor construtivo e acabamento: métodos modernos aliados ao cuidado nos detalhes, insumos de marcas reconhecidas e mão de obra especializada.",
+        "transparency": "Transparência e segurança: acompanhamento documental e jurídico claro em cada etapa, com prestação de contas contínua aos investidores.",
+        "sustainability": "Sustentabilidade urbana: projetos que harmonizam com o entorno, respeitam normas ambientais e promovem desenvolvimento responsável das cidades."
+      }
+    },
+    "balneario": {
+      "title": "Balneário Camboriú",
+      "text": "Cidade cheia de encantos, Balneário Camboriú presenteia diariamente seus moradores e visitantes com exuberante beleza. Paisagens naturais que vão das praias à Mata Atlântica, combinadas com ótima infraestrutura, fazem da cidade um local vibrante e cheio de vida — excelente escolha tanto para se viver quanto para investir."
+    },
+    "closing": {
+      "title": "Acompanhe o Futuro da Nossa História",
+      "text": "Ao longo de mais de duas décadas, a Leone Construtora transformou o horizonte de Santa Catarina com projetos que são sinônimo de segurança e sofisticação. Convidamos você a conhecer nossos empreendimentos prontos e futuros lançamentos, onde cada metro quadrado é planejado para superar expectativas e valorizar o seu estilo de vida.",
+      "cta": "Conheça nossos empreendimentos"
+    }
+  },
+  "projectsPage": {
+    "hero": {
+      "title": "Nossos Empreendimentos",
+      "subtitle": "Mais de duas décadas construindo projetos que transformam o litoral catarinense. Cada empreendimento é pensado para oferecer qualidade, valorização e bem-estar.",
+      "totalProjects": "Empreendimentos",
+      "completedProjects": "Concluídos"
+    },
+    "filters": {
+      "all": "Todos",
+      "completed": "Concluídos",
+      "inProgress": "Em Obras",
+      "launch": "Lançamento"
+    },
+    "status": {
+      "completed": "Concluído",
+      "inProgress": "Em Obras",
+      "launch": "Lançamento"
+    },
+    "projectDetail": {
+      "highlights": "Destaques do Empreendimento",
+      "about": "Sobre o Empreendimento",
+      "gallery": "Galeria de Fotos",
+      "plans": "Plantas e Tipologias",
+      "progress": "Andamento da Obra",
+      "location": "Localização",
+      "contact": "Entre em Contato",
+      "scheduleVisit": "Agendar Visita",
+      "talkToAgent": "Falar com Corretor",
+      "downloadBrochure": "Baixar Brochura",
+      "interested": "Interessado neste empreendimento?",
+      "contactText": "Entre em contato conosco e tenha acesso a informações exclusivas, plantas detalhadas e condições especiais de pagamento."
+    },
+    "projectLabel": "Empreendimento",
+    "viewDetails": "Ver detalhes",
+    "noProjects": "Nenhum empreendimento encontrado nesta categoria.",
+    "projects": {
+      "miranteAtlantico": {
+        "name": "Mirante do Atlântico",
+        "location": "Balneário Camboriú • SC",
+        "description": "Vista magnífica para o mar a 300 metros da praia. Excelentes opções de lazer e convivência no Pontal Norte."
+      },
+      "palazzoDelMare": {
+        "name": "Palazzo del Mare",
+        "location": "Bombinhas • SC",
+        "description": "A 27 passos da areia da praia. Excelente infraestrutura e alto padrão de acabamento em localização privilegiada."
+      },
+      "portalMunicipios": {
+        "name": "Portal dos Municípios",
+        "location": "Balneário Camboriú • SC",
+        "description": "Localização estratégica com vista privilegiada e acabamento de alto padrão no coração de Balneário Camboriú."
+      },
+      "residencialNacoes": {
+        "name": "Residencial das Nações",
+        "location": "Balneário Camboriú • SC",
+        "description": "Projeto residencial de alto padrão com design moderno e localização privilegiada no centro da cidade."
+      },
+      "vilaEsperanca": {
+        "name": "Vila Esperança",
+        "location": "Nova Esperança, BC • SC",
+        "description": "Condomínio fechado estilo vila tradicional com 8 casas térreas exclusivas e charme acolhedor."
+      }
+    }
+  },
+  "common": {
+    "readMore": "Saiba mais",
+    "seeMore": "Ver mais",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "close": "Fechar",
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "tryAgain": "Tentar novamente"
+  }
+}

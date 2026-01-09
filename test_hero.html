@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero HTML Tests</title>
+</head>
+<body>
+   <section class="hero hero-monumental">
+  <div class="hero-bg-logo"></div>
+
+  <div class="hero-content">
+    <h1>Leone Pavan Empreendimentos</h1>
+    <p>Arquitetura, solidez e compromisso desde 2004</p>
+  </div>
+</section>
+
+<style>
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #2b2116 0%, #1a140e 65%);
+  color: #fffaf5;
+  font-family: "Raleway", system-ui, sans-serif;
+}
+
+.hero-bg-logo {
+  position: absolute;
+  inset: 0;
+  background: url("leone-simbolo.svg") no-repeat center;
+  background-size: 120%;
+  opacity: 0.05;
+  filter: blur(0.2px);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 720px;
+  padding: 0 24px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+</style>
+
+
+<section class="hero hero-glass">
+  <div class="hero-bg-logo"></div>
+
+  <div class="glass-card">
+    <h1>Quem Somos</h1>
+    <p>
+      Desde 2004, a Leone Pavan Empreendimentos constrói espaços que unem
+      qualidade técnica, arquitetura e confiança.
+    </p>
+  </div>
+</section>
+
+<style>
+.hero-glass {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #1a140e, #2b2116);
+  overflow: hidden;
+}
+
+.hero-glass .hero-bg-logo {
+  position: absolute;
+  inset: 0;
+  background: url("leone-simbolo.svg") no-repeat center;
+  background-size: 140%;
+  opacity: 0.06;
+}
+
+.glass-card {
+  position: relative;
+  max-width: 640px;
+  padding: 56px 48px;
+  background: rgba(255, 250, 245, 0.08);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 250, 245, 0.18);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  color: #fffaf5;
+  text-align: center;
+}
+
+.glass-card h1 {
+  font-size: 2.4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.glass-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+</style>
+
+
+<section class="hero hero-architecture">
+  <div class="logo-structure"></div>
+
+  <div class="hero-text">
+    <span>Desde 2004</span>
+    <h1>Construindo<br>legado urbano</h1>
+    <p>
+      A Leone Pavan Empreendimentos atua com rigor técnico,
+      visão arquitetônica e respeito à cidade.
+    </p>
+  </div>
+</section>
+
+<style>
+.hero-architecture {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  background: #1a140e;
+  color: #fffaf5;
+  position: relative;
+  overflow: hidden;
+  font-family: "Raleway", system-ui, sans-serif;
+}
+
+.logo-structure {
+  position: absolute;
+  left: -15%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70%;
+  height: 70%;
+  background: url("leone-simbolo.svg") no-repeat center;
+  background-size: contain;
+  opacity: 0.08;
+}
+
+.hero-text {
+  grid-column: 2;
+  padding: 0 64px;
+  position: relative;
+}
+
+.hero-text span {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
+  line-height: 1.1;
+  margin: 16px 0 24px;
+}
+
+.hero-text p {
+  max-width: 420px;
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+</style>
+
+</body>
+</html>

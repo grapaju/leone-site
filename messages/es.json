@@ -1,0 +1,272 @@
+{
+  "home": {
+    "companyName": "Leone Pavan Emprendimientos",
+    "waitingMessage": "Esperando instrucciones para la creación de la página de inicio...",
+    "since": "Desde 2004 • Balneário Camboriú"
+  },
+  "nav": {
+    "home": "Inicio",
+    "projects": "Emprendimientos",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto",
+    "blog": "Blog"
+  },
+  "hero": {
+    "badge": "Desde 2004 • Balneário Camboriú",
+    "title": "Construyendo sueños desde 2004",
+    "subtitle": "Proyectos pensados para transformar vidas y valorizar inversiones.",
+    "cta": "Conozca nuestros emprendimientos"
+  },
+  "projects": {
+    "title": "Nuestros emprendimientos",
+    "subtitle": "Proyectos con diseño inteligente, ubicación estratégica y ejecución impecable.",
+    "status": {
+      "completed": "Finalizado",
+      "inProgress": "En Construcción",
+      "launch": "Lanzamiento"
+    },
+    "cta": "Ver detalles",
+    "viewAll": "Ver todos los emprendimientos",
+    "items": {
+      "palazzoDelMare": {
+        "name": "Palazzo del Mare",
+        "location": "Bombinhas • SC",
+        "description": "A 27 pasos de la arena de la playa. Excelente infraestructura y acabados de alto estándar en ubicación privilegiada."
+      },
+      "miranteAtlantico": {
+        "name": "Mirante do Atlântico",
+        "location": "Balneário Camboriú • SC",
+        "description": "Vista magnífica al mar a 300 metros de la playa. Excelentes opciones de ocio y convivencia en Pontal Norte."
+      }
+    }
+  },
+  "differentials": {
+    "title": "Por qué elegir Leone Pavan",
+    "subtitle": "Dos décadas de excelencia en construcción de alto estándar.",
+    "quality": {
+      "title": "Calidad certificada",
+      "description": "Las certificaciones PBQP-H e ISO 9001 garantizan estándares de excelencia en todos los procesos constructivos."
+    },
+    "team": {
+      "title": "Equipo especializado",
+      "description": "Arquitectos e ingenieros con décadas de experiencia en emprendimientos de alto estándar."
+    },
+    "delivery": {
+      "title": "Entrega en plazo",
+      "description": "Cronograma rigurosamente cumplido, con planificación técnica y control de obra."
+    },
+    "support": {
+      "title": "Posventa dedicado",
+      "description": "Seguimiento completo después de la entrega de llaves, garantizando tranquilidad al cliente."
+    }
+  },
+  "contact": {
+    "title": "Póngase en contacto",
+    "subtitle": "Estamos listos para realizar su sueño.",
+    "form": {
+      "name": "Nombre completo",
+      "namePlaceholder": "Su nombre",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "su@email.com",
+      "phone": "Teléfono",
+      "phonePlaceholder": "+55 (47) 99999-9999",
+      "message": "Mensaje",
+      "messagePlaceholder": "¿Cómo podemos ayudarle?",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Error al enviar el mensaje. Inténtelo de nuevo."
+    },
+    "info": {
+      "address": "Dirección",
+      "addressValue": "Av. Atlântica, 123 - Centro, Balneário Camboriú/SC",
+      "phone": "Teléfono",
+      "phoneValue": "+55 (47) 3367-1234",
+      "email": "Correo electrónico",
+      "emailValue": "contacto@leonepavan.com.br",
+      "hours": "Horario",
+      "hoursValue": "Lunes a Viernes: 8h a 18h"
+    }
+  },
+  "aboutHome": {
+    "title": "Sobre Leone Pavan",
+    "subtitle": "Tradición e innovación en emprendimientos de alto estándar.",
+    "history": "Desde 2004, Leone Pavan Emprendimientos se destaca en el mercado de Balneário Camboriú por la excelencia en la construcción de emprendimientos de alto estándar. Con una trayectoria sólida y compromiso con la calidad, entregamos proyectos que transforman vidas y valorizan inversiones.",
+    "mission": {
+      "title": "Misión",
+      "description": "Crear emprendimientos de alto estándar que superen expectativas, combinando diseño, calidad y ubicación privilegiada."
+    },
+    "vision": {
+      "title": "Visión",
+      "description": "Ser referencia en emprendimientos de lujo, reconocida por la excelencia e innovación en cada proyecto."
+    },
+    "values": {
+      "title": "Valores",
+      "description": "Ética, transparencia, calidad, compromiso y satisfacción del cliente."
+    }
+  },
+  "footer": {
+    "tagline": "Constructora de alto estándar • estética atemporal",
+    "rights": "© 2004-2026 Leone Pavan Emprendimientos. Todos los derechos reservados.",
+    "social": {
+      "follow": "Síguenos"
+    },
+    "legal": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Uso"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Quiénes Somos",
+      "title": "Leone Pavan Emprendimientos",
+      "subtitle": "Compromiso, calidad y excelencia desde 2004.",
+      "intro": "Desde 2004, cuando inició sus actividades, Leone Pavan Emprendimientos asumió una postura de seriedad en cada proyecto. Con profesionales altamente calificados, materiales de primera línea y tecnología de última generación, evolucionamos y refinamos nuestros procesos constantemente."
+    },
+    "intro": {
+      "text": "Desde 2004, cuando inició sus actividades, Leone Pavan Emprendimientos asumió una postura de seriedad con cada emprendimiento ejecutado. Actuando en el mercado de la construcción civil con profesionales altamente calificados, utilizando materias primas de primera línea y tecnología de última generación, evolucionamos y perfeccionamos nuestros conocimientos constantemente."
+    },
+    "history": {
+      "title": "Nuestra trayectoria en la construcción",
+      "text": "Fundada en mayo de 2004 en Balneário Camboriú, Leone Construtora e Incorporadora — Leone Pavan Emprendimientos — une tecnología industrial y cuidado artesanal en cada obra. Actuamos en el litoral catarinense con foco en residenciales de medio y alto estándar, liderando todo el ciclo: prospección técnica de terrenos, proyecto, ejecución y entrega, con materiales de primera línea, equipo calificado e innovación arquitectónica para garantizar seguridad, valorización y bienestar.",
+      "timeline": {
+        "foundation": {
+          "year": "2004",
+          "text": "Fundación en Balneário Camboriú/SC, con foco en obras residenciales."
+        },
+        "mirante": {
+          "year": "2009",
+          "text": "SPE para el Mirante do Atlântico, hito en el segmento de alto estándar con vista al mar."
+        },
+        "consolidation": {
+          "year": "2014",
+          "text": "Consolidación en BC con entregas como Vila Esperança y Portal dos Municípios."
+        },
+        "bombinhas": {
+          "year": "2018",
+          "text": "Expansión a Bombinhas con el Palazzo del Mare, a pocos pasos de la playa."
+        },
+        "today": {
+          "year": "2024",
+          "text": "Portafolio maduro en SC, refuerzo digital y nuevos lanzamientos en el eje BC/Balneário Shopping."
+        }
+      },
+      "portfolio": {
+        "mirante": {
+          "title": "Mirante do Atlântico",
+          "description": "Vista al mar en Balneário Camboriú."
+        },
+        "palazzo": {
+          "title": "Palazzo del Mare",
+          "description": "Alto estándar en Bombinhas, a pocos pasos de la playa."
+        },
+        "portal": {
+          "title": "Portal dos Municípios",
+          "description": "Residencial con infraestructura familiar."
+        },
+        "vila": {
+          "title": "Vila Esperança",
+          "description": "Condominio orientado a la exclusividad y privacidad."
+        }
+      },
+      "portfolioLabel": "Portafolio",
+      "stats": {
+        "years": "Años de experiencia",
+        "projects": "Emprendimientos entregados",
+        "satisfaction": "Satisfacción de clientes"
+      }
+    },
+    
+    "values": {
+      "title": "Misión, Visión y Valores",
+      "items": {
+        "mission": {
+          "title": "Misión",
+          "description": "Construir con excelencia técnica y ética, convirtiendo inversiones en hogares seguros y proyectos que valorizan el paisaje urbano de Santa Catarina."
+        },
+        "vision": {
+          "title": "Visión",
+          "description": "Consolidarse como la constructora más confiable del litoral catarinense, reconocida por la puntualidad y el cuidado en los acabados."
+        },
+        "values": {
+          "title": "Valores",
+          "description": "Tradición, transparencia en las relaciones, solidez financiera y rigor constructivo en cada etapa."
+        }
+      }
+    },
+    "differential": {
+      "title": "¿Por qué elegir a Leone Construtora?",
+      "text": "Vamos más allá de la entrega de llaves: nuestro foco es ofrecer activos inmobiliarios consistentes y confiables. Compromiso con la calidad, la transparencia y la responsabilidad para garantizar tranquilidad a quien invierte y confort a quien vive.",
+      "items": {
+        "locations": "Ubicaciones privilegiadas: terrenos estratégicos en áreas de buena valorización y vistas consolidadas en los principales balnearios de Santa Catarina.",
+        "quality": "Rigor constructivo y acabado: métodos modernos con cuidado en los detalles, insumos de marcas reconocidas y mano de obra especializada.",
+        "transparency": "Transparencia y seguridad: seguimiento documental y jurídico claro en cada etapa, con rendición continua a los inversores.",
+        "sustainability": "Sustentabilidad urbana: proyectos pensados para armonizar con el entorno, respetar normas ambientales y promover el desarrollo responsable de las ciudades."
+      }
+    },
+    "balneario": {
+      "title": "Balneário Camboriú",
+      "text": "Ciudad llena de encantos, Balneário Camboriú regala diariamente a sus residentes y visitantes una belleza exuberante. Paisajes naturales que van desde las playas hasta la Mata Atlántica, combinados con excelente infraestructura, hacen de la ciudad un lugar vibrante y lleno de vida — excelente elección tanto para vivir como para invertir."
+    },
+    "closing": {
+      "title": "Acompañe el Futuro de Nuestra Historia",
+      "text": "A lo largo de más de dos décadas, Leone Construtora transformó el horizonte de Santa Catarina con proyectos sinónimo de seguridad y sofisticación. Lo invitamos a conocer nuestros emprendimientos entregados y próximos lanzamientos, donde cada metro cuadrado se planifica para superar expectativas y valorizar su estilo de vida.",
+      "cta": "Conozca nuestros emprendimientos"
+    }
+  },
+  "projectsPage": {
+    "hero": {
+      "title": "Nuestros Emprendimientos",
+      "subtitle": "Más de dos décadas construyendo proyectos que transforman el litoral catarinense. Cada emprendimiento está pensado para ofrecer calidad, valorización y bienestar.",
+      "totalProjects": "Emprendimientos",
+      "completedProjects": "Concluidos"
+    },
+    "filters": {
+      "all": "Todos",
+      "completed": "Concluidos",
+      "inProgress": "En Obras",
+      "launch": "Lanzamiento"
+    },
+    "status": {
+      "completed": "Concluido",
+      "inProgress": "En Obras",
+      "launch": "Lanzamiento"
+    },
+    "projectLabel": "Emprendimiento",
+    "viewDetails": "Ver detalles",
+    "noProjects": "No se encontraron emprendimientos en esta categoría.",
+    "projects": {
+      "miranteAtlantico": {
+        "name": "Mirante do Atlântico",
+        "location": "Balneário Camboriú • SC",
+        "description": "Vista magnífica al mar a 300 metros de la playa. Excelentes opciones de ocio y convivencia en Pontal Norte."
+      },
+      "palazzoDelMare": {
+        "name": "Palazzo del Mare",
+        "location": "Bombinhas • SC",
+        "description": "A 27 pasos de la arena de la playa. Excelente infraestructura y acabado de alto estándar en ubicación privilegiada."
+      },
+      "portalMunicipios": {
+        "name": "Portal dos Municípios",
+        "location": "Balneário Camboriú • SC",
+        "description": "Ubicación estratégica con vista privilegiada y acabado de alto estándar en el corazón de Balneário Camboriú."
+      },
+      "residencialNacoes": {
+        "name": "Residencial das Nações",
+        "location": "Balneário Camboriú • SC",
+        "description": "Diseño moderno y arquitectura contemporánea en ubicación premium en el centro de BC."
+      }
+    }
+  },
+  "common": {
+    "readMore": "Saber más",
+    "seeMore": "Ver más",
+    "back": "Volver",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar",
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "tryAgain": "Intentar de nuevo"
+  }
+}
