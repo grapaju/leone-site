@@ -63,25 +63,25 @@ export function CitySection() {
   const [activeSlide, setActiveSlide] = useState(0)
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 section-dark relative overflow-hidden">
+    <section className="py-12 sm:py-24 md:py-32 section-dark relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Text Side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 lg:order-1"
+            className="space-y-4 sm:space-y-6 lg:order-1"
           >
             {/* Accent line */}
             <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent" />
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-light tracking-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-light tracking-tight leading-tight">
               Investir em Balneário Camboriú
             </h2>
 
-            <p className="text-base sm:text-lg text-light/70 leading-relaxed">
+            <p className="text-sm sm:text-lg text-light/70 leading-relaxed">
               O investimento mais inteligente do litoral brasileiro, com retorno comprovado e potencial crescente.
             </p>
 
@@ -91,7 +91,7 @@ export function CitySection() {
             </p>
 
             {/* Amenities Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 pt-4 sm:pt-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 pt-2 sm:pt-6">
               {investmentFeatures.map((feature, index) => {
                 const Icon = feature.icon
                 return (
@@ -101,17 +101,17 @@ export function CitySection() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex flex-col items-center gap-2 p-4 rounded-xl glass-subtle hover:bg-gold/5 transition-colors group"
+                    className="flex flex-col items-center gap-1.5 sm:gap-2 p-2 sm:p-4 rounded-lg sm:rounded-xl glass-subtle hover:bg-gold/5 transition-colors group"
                   >
-                    <Icon className="w-6 h-6 text-gold group-hover:scale-110 transition-transform" strokeWidth={1.5} />
-                    <span className="text-xs text-light/70 text-center">{feature.label}</span>
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold group-hover:scale-110 transition-transform" strokeWidth={1.5} />
+                    <span className="text-[0.65rem] sm:text-xs text-light/70 text-center leading-tight">{feature.label}</span>
                   </motion.div>
                 )
               })}
             </div>
 
-            <div className="pt-4">
-              <Button asChild variant="gold" size="lg">
+            <div className="pt-2 sm:pt-4">
+              <Button asChild variant="gold" size="lg" className="w-full sm:w-auto">
                 <Link href="/empreendimentos">
                   Veja nossos empreendimentos
                 </Link>
@@ -160,15 +160,15 @@ export function CitySection() {
               </Swiper>
 
               {/* Dynamic info card */}
-              <div className="absolute bottom-6 left-6 right-6 glass-form rounded-xl p-4 z-10">
-                <div className="flex items-center justify-between">
+              <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 glass-form rounded-lg sm:rounded-xl p-3 sm:p-4 z-10">
+                <div className="flex items-center justify-between gap-2">
                   <div>
-                    <div className="text-2xl font-light text-gold">{cityImages[activeSlide]?.stats.left.value}</div>
-                    <div className="text-xs text-light/70">{cityImages[activeSlide]?.stats.left.label}</div>
+                    <div className="text-lg sm:text-2xl font-light text-gold">{cityImages[activeSlide]?.stats.left.value}</div>
+                    <div className="text-[0.65rem] sm:text-xs text-light/70">{cityImages[activeSlide]?.stats.left.label}</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-light text-gold">{cityImages[activeSlide]?.stats.right.value}</div>
-                    <div className="text-xs text-light/70">{cityImages[activeSlide]?.stats.right.label}</div>
+                    <div className="text-lg sm:text-2xl font-light text-gold">{cityImages[activeSlide]?.stats.right.value}</div>
+                    <div className="text-[0.65rem] sm:text-xs text-light/70">{cityImages[activeSlide]?.stats.right.label}</div>
                   </div>
                 </div>
               </div>

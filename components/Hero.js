@@ -79,13 +79,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="pt-4"
+            className="pt-4 px-4"
           >
             <Button
               onClick={scrollToProjects}
               variant="gold"
               size="xl"
-              className="group"
+              className="group w-full sm:w-auto"
             >
               {t('cta')}
               <ChevronDown className="ml-2 group-hover:translate-y-1 transition-transform" />

@@ -108,45 +108,45 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 top-[100px]">
-          <div className="absolute inset-0 bg-dark-base/95 backdrop-blur-md">
-            <nav className="container mx-auto px-6 py-8 flex flex-col space-y-6">
+        <div className="md:hidden fixed inset-0 z-[999] pt-[100px] pointer-events-auto">
+          <div className="absolute inset-0 bg-dark-base/98 backdrop-blur-xl">
+            <nav className="container mx-auto px-6 py-8 flex flex-col space-y-4">
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/20 block"
               >
                 {t('home')}
               </Link>
               <Link
                 href="/sobre"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/20 block"
               >
                 {t('about')}
               </Link>
               <Link
                 href="/empreendimentos"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/20 block"
               >
                 {t('projects')}
               </Link>
               <Link
                 href="/blog"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/20 block"
               >
                 {t('blog')}
               </Link>
               <Link
                 href="/contato"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/20 block"
               >
                 {t('contact')}
               </Link>
-              <div className="pt-4">
+              <div className="pt-6">
                 <LanguageSwitcher />
               </div>
             </nav>
