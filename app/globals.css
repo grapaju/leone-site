@@ -206,25 +206,61 @@
   /* Responsive header */
   @media (max-width: 768px) {
     .site-header {
-      top: 16px;
+      top: 12px;
     }
 
     .header-glass {
-      grid-template-columns: auto 1fr;
-      gap: 16px;
-      padding: 16px 20px;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      padding: 14px 16px;
+      width: calc(100% - 24px);
+    }
+
+    .site-header.scrolled .header-glass {
+      padding: 12px 16px;
     }
 
     .nav {
       display: none;
     }
 
+    .logo {
+      min-width: 140px;
+    }
+
     .logo svg {
-      height: 48px;
+      height: 44px;
     }
 
     .site-header.scrolled .logo svg {
+      height: 38px;
+    }
+
+    .header-actions {
+      justify-content: flex-end;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .site-header {
+      top: 8px;
+    }
+
+    .header-glass {
+      padding: 12px 14px;
+      width: calc(100% - 16px);
+    }
+
+    .logo {
+      min-width: 120px;
+    }
+
+    .logo svg {
       height: 40px;
+    }
+
+    .site-header.scrolled .logo svg {
+      height: 36px;
     }
   }
 }
@@ -315,5 +351,138 @@
 
   .swiper-pagination-bullet-active {
     opacity: 1 !important;
+  }
+
+  /* Blog Prose Styling */
+  .prose-invert {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .prose-invert h2 {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .prose-invert h3 {
+    color: #B89A62;
+    font-weight: 400;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-invert p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+    font-size: 1.125rem;
+  }
+
+  .prose-xl.prose-invert p {
+    font-size: 1.2rem;
+    line-height: 1.85;
+  }
+
+  .prose-invert ul {
+    margin: 1.5rem 0;
+  }
+
+  .prose-invert li {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.5rem 0;
+    font-size: 1.125rem;
+  }
+
+  .prose-invert strong {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+  }
+
+  /* Mobile Performance Optimizations */
+  @media (max-width: 768px) {
+    * {
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+    }
+    
+    .glass {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+    
+    /* Reduce backdrop filter complexity on mobile */
+    .glass {
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+    }
+
+    .glass-subtle {
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+    }
+
+    .glass-form {
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+    }
+    
+    /* Prevent animation stuttering on mobile */
+    .motion-reduce {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    /* Better touch targets */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Prevent horizontal scroll */
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Optimize font rendering on mobile */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Further reduce blur on smaller devices */
+    .glass, .glass-subtle, .glass-form {
+      backdrop-filter: blur(6px) !important;
+      -webkit-backdrop-filter: blur(6px) !important;
+    }
+
+    /* Smaller padding for containers */
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  /* Prefers reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Hardware acceleration for better performance */
+  .glass,
+  .bg-gradient-to-br,
+  .bg-gradient-to-r {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
   }
 }

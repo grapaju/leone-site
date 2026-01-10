@@ -49,7 +49,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-block"
           >
-            <span className="inline-block glass-subtle rounded-full px-6 py-3 text-xs md:text-sm uppercase tracking-[0.2em] text-gold font-medium">
+            <span className="inline-block glass-subtle rounded-full px-4 py-2 md:px-6 md:py-3 text-[0.65rem] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.2em] text-gold font-medium">
               {t('badge')}
             </span>
           </motion.div>
@@ -59,7 +59,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-light leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-light leading-tight px-4 sm:px-0"
           >
             {t('title')}
           </motion.h1>
@@ -69,7 +69,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-light/85 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-light/85 max-w-3xl mx-auto leading-relaxed px-4 sm:px-6"
           >
             {t('subtitle')}
           </motion.p>

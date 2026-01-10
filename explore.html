@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<title>Explore Balneário Camboriú • Leone Pavan</title>
+
+<style>
+:root {
+  --bg: #1a140e;
+  --surface: #1f1a14;
+  --gold: #cc9e51;
+  --text: #f5f2ed;
+  --muted: rgba(245,242,237,.6);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #2a2118 0%, var(--bg) 70%);
+  font-family: system-ui, sans-serif;
+  color: var(--text);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(to bottom, rgba(26,20,14,.9), rgba(26,20,14,.6)),
+              url("https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?auto=format&fit=crop&w=1600&q=80") center/cover;
+  display: flex;
+  align-items: center;
+  padding: 6rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  max-width: 700px;
+}
+
+.hero span {
+  color: var(--gold);
+}
+
+/* DATA STRIP */
+
+.data-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(255,255,255,.02);
+  border-top: 1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.data {
+  padding: 3rem;
+  text-align: center;
+}
+
+.data strong {
+  display: block;
+  font-size: 2.2rem;
+  color: var(--gold);
+}
+
+/* GALLERY */
+
+.gallery {
+  padding: 6rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+}
+
+.big-img {
+  background: url("https://images.unsplash.com/photo-1592886290095-6d8c16f69f2c?auto=format&fit=crop&w=1200&q=80") center/cover;
+  border-radius: 24px;
+  min-height: 480px;
+}
+
+.side-images {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.side-images div {
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* INVESTMENT */
+
+.invest {
+  padding: 6rem;
+  background: linear-gradient(to top, rgba(204,158,81,.08), transparent);
+}
+
+.invest h2 {
+  font-size: 2.5rem;
+  max-width: 600px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+
+/* CTA */
+
+.cta {
+  padding: 6rem;
+  text-align: center;
+}
+
+.cta a {
+  padding: 1rem 3rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #cc9e51, #b38a45);
+  color: #1a140e;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>O endereço mais valorizado do Brasil para viver e investir em <span>Balneário Camboriú</span></h1>
+</section>
+
+<section class="data-strip">
+  <div class="data"><strong>+120%</strong> valorização em 10 anos</div>
+  <div class="data"><strong>98%</strong> ocupação anual</div>
+  <div class="data"><strong>Top 1</strong> m² do Brasil</div>
+  <div class="data"><strong>Global</strong> perfil de compradores</div>
+</section>
+
+<section class="gallery">
+  <div class="big-img"></div>
+  <div class="side-images">
+    <div style="background-image:url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80')"></div>
+    <div style="background-image:url('https://images.unsplash.com/photo-1606813908915-7b2c178bfb3a?auto=format&fit=crop&w=800&q=80')"></div>
+    <div style="background-image:url('https://images.unsplash.com/photo-1559579313-021b6ec9f49f?auto=format&fit=crop&w=800&q=80')"></div>
+  </div>
+</section>
+
+<section class="invest">
+  <h2>Por que investidores escolhem Balneário Camboriú</h2>
+  <div class="cards">
+    <div class="card">Alta demanda por imóveis de luxo e temporada</div>
+    <div class="card">Mercado com liquidez e valorização constante</div>
+    <div class="card">Perfil internacional de compradores e turistas</div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Veja os empreendimentos da Leone nesta cidade</h2>
+  <br><br>
+  <a href="#">Explorar imóveis</a>
+</section>
+
+</body>
+</html>

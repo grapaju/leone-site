@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/lib/navigation'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
+import { Menu, X } from 'lucide-react'
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const t = useTranslations('nav')
 
   useEffect(() => {
@@ -17,6 +19,17 @@ export function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
 
   return (
     <header
@@ -69,8 +82,8 @@ export function Header() {
           </svg>
         </Link>
 
-        {/* Navigation */}
-        <nav className="nav">
+        {/* Navigation - Desktop */}
+        <nav className="nav hidden md:flex">
           <Link href="/">{t('home')}</Link>
           <Link href="/sobre">{t('about')}</Link>
           <Link href="/empreendimentos">{t('projects')}</Link>
@@ -78,11 +91,68 @@ export function Header() {
           <Link href="/contato">{t('contact')}</Link>
         </nav>
 
-        {/* Language Switcher */}
+        {/* Header Actions */}
         <div className="header-actions">
-          <LanguageSwitcher />
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden w-10 h-10 flex items-center justify-center text-light hover:text-gold transition-colors"
+            aria-label="Menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-40 top-[100px]">
+          <div className="absolute inset-0 bg-dark-base/95 backdrop-blur-md">
+            <nav className="container mx-auto px-6 py-8 flex flex-col space-y-6">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+              >
+                {t('home')}
+              </Link>
+              <Link
+                href="/sobre"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+              >
+                {t('about')}
+              </Link>
+              <Link
+                href="/empreendimentos"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+              >
+                {t('projects')}
+              </Link>
+              <Link
+                href="/blog"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+              >
+                {t('blog')}
+              </Link>
+              <Link
+                href="/contato"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg text-light hover:text-gold transition-colors py-3 border-b border-gold/10"
+              >
+                {t('contact')}
+              </Link>
+              <div className="pt-4">
+                <LanguageSwitcher />
+              </div>
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

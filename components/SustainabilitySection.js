@@ -16,38 +16,38 @@ export function SustainabilitySection() {
   const t = useTranslations('home')
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Text Side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             {/* Accent line */}
             <div className="w-14 h-0.5 bg-gradient-to-r from-green-500 via-green-500/40 to-transparent" />
 
             <div>
-              <h2 className="text-4xl md:text-5xl font-light text-light tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-light tracking-tight mb-3 sm:mb-4">
                 Construímos com responsabilidade
               </h2>
-              <p className="text-lg text-light/70 leading-relaxed">
+              <p className="text-base sm:text-lg text-light/70 leading-relaxed">
                 Práticas sustentáveis, materiais ecológicos e eficiência energética em todos os projetos. 
                 Compromisso com o futuro do planeta e do seu lar.
               </p>
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {sustainabilityFeatures.map((feature, index) => {
                 const Icon = feature.icon
                 const colorClasses = {
@@ -64,21 +64,21 @@ export function SustainabilitySection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="space-y-3"
+                    className="space-y-2 sm:space-y-3"
                   >
                     <div
-                      className={`w-12 h-12 rounded-xl border flex items-center justify-center ${colorClasses[feature.color]}`}
+                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl border flex items-center justify-center ${colorClasses[feature.color]}`}
                     >
-                      <Icon className="w-6 h-6" strokeWidth={1.5} />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 className="text-light font-medium mb-1">
+                      <h3 className="text-sm sm:text-base text-light font-medium mb-1">
                         {feature.key === 'green' && 'Materiais Sustentáveis'}
                         {feature.key === 'solar' && 'Energia Solar'}
                         {feature.key === 'water' && 'Reuso de Água'}
                         {feature.key === 'recycle' && 'Reciclagem'}
                       </h3>
-                      <p className="text-sm text-light/60 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-light/60 leading-relaxed">
                         {feature.key === 'green' && 'Certificações ambientais e materiais ecológicos'}
                         {feature.key === 'solar' && 'Painéis solares e eficiência energética'}
                         {feature.key === 'water' && 'Sistemas de captação e reaproveitamento'}

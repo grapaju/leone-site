@@ -9,7 +9,8 @@ import { DifferentialSection } from '@/components/AboutPage/DifferentialSection'
 import { ClosingSection } from '@/components/AboutPage/ClosingSection'
 import { Footer } from '@/components/Footer'
 
-export default function AboutPage({ params: { locale } }) {
+export default async function AboutPage({ params }) {
+  const { locale } = await params
   // Habilitar static rendering
   setRequestLocale(locale)
 

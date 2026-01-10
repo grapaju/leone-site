@@ -284,6 +284,30 @@
       }
     }
   },
+  "blog": {
+    "title": "Conteúdo para quem busca mais",
+    "subtitle": "Insights exclusivos sobre investimentos imobiliários, arquitetura e lifestyle premium",
+    "searchPlaceholder": "Buscar artigos...",
+    "categories": {
+      "all": "Todos",
+      "investments": "Investimentos",
+      "architecture": "Arquitetura",
+      "lifestyle": "Lifestyle",
+      "sustainability": "Sustentabilidade",
+      "technology": "Tecnologia"
+    },
+    "readTime": "min de leitura",
+    "readMore": "Ler mais",
+    "featured": "Destaque",
+    "backToBlog": "Voltar ao blog",
+    "share": "Compartilhar",
+    "noResults": "Nenhum artigo encontrado",
+    "noResultsDescription": "Tente ajustar sua busca ou filtros",
+    "ctaTitle": "Interessado em nossos empreendimentos?",
+    "ctaDescription": "Conheça nossos projetos exclusivos em Balneário Camboriú e descubra oportunidades únicas de investimento.",
+    "ctaPrimary": "Ver empreendimentos",
+    "ctaSecondary": "Sobre a Leone"
+  },
   "common": {
     "readMore": "Saiba mais",
     "seeMore": "Ver mais",

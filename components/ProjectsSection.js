@@ -87,18 +87,18 @@ function ProjectCard({ project, index }) {
         </div>
 
         {/* Content */}
-        <div className="p-7 space-y-4">
+        <div className="p-5 sm:p-7 space-y-3 sm:space-y-4">
           <div>
-            <h3 className="text-2xl font-medium text-light mb-2 group-hover:text-gold transition-colors">
+            <h3 className="text-xl sm:text-2xl font-medium text-light mb-2 group-hover:text-gold transition-colors">
               {t(`items.${project.id}.name`)}
             </h3>
-            <div className="flex items-center gap-2 text-sm text-light/60">
-              <MapPin className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-light/60">
+              <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               <span>{t(`items.${project.id}.location`)}</span>
             </div>
           </div>
 
-          <p className="text-base text-light/70 line-clamp-3 leading-relaxed">
+          <p className="text-sm sm:text-base text-light/70 line-clamp-3 leading-relaxed">
             {t(`items.${project.id}.description`)}
           </p>
 
@@ -128,29 +128,29 @@ export function ProjectsSection() {
   const t = useTranslations('projects')
 
   return (
-    <section id="empreendimentos" className="py-24 md:py-32 section-dark">
-      <div className="container mx-auto px-6">
+    <section id="empreendimentos" className="py-16 sm:py-24 md:py-32 section-dark">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-16"
+          className="max-w-3xl mb-12 sm:mb-16"
         >
           {/* Accent line */}
-          <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mb-6" />
+          <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mb-4 sm:mb-6" />
           
-          <h2 className="text-4xl md:text-5xl font-light text-light mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-light mb-3 sm:mb-4 tracking-tight">
             {t('title')}
           </h2>
-          <p className="text-lg text-light/70 leading-relaxed">
+          <p className="text-base sm:text-lg text-light/70 leading-relaxed">
             {t('subtitle')}
           </p>
         </motion.header>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

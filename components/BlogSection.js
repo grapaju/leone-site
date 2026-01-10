@@ -79,9 +79,9 @@ function BlogCard({ post, index, locale }) {
           </div>
 
           {/* Content */}
-          <div className="p-6 space-y-4">
+          <div className="p-5 sm:p-6 space-y-3 sm:space-y-4">
             {/* Meta */}
-            <div className="flex items-center gap-4 text-xs text-light/50">
+            <div className="flex items-center gap-3 sm:gap-4 text-xs text-light/50">
               <div className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5" />
                 <time>
@@ -124,29 +124,33 @@ export function BlogSection({ locale = 'pt' }) {
   const t = useTranslations('home')
 
   return (
-    <section className="py-24 md:py-32 section-dark">
-      <div className="container mx-auto px-6">
+    <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden" style={{
+      background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)), rgba(58, 46, 34, 0.15)',
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)'
+    }}>
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
         >
           {/* Accent line */}
-          <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mx-auto mb-6" />
+          <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mx-auto mb-4 sm:mb-6" />
 
-          <h2 className="text-4xl md:text-5xl font-light text-light mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-light mb-3 sm:mb-4 tracking-tight">
             Conteúdo para quem busca mais
           </h2>
-          <p className="text-lg text-light/70 leading-relaxed">
+          <p className="text-base sm:text-lg text-light/70 leading-relaxed">
             Notícias, guias e inspirações para quem está no mercado imobiliário.
           </p>
         </motion.header>
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {blogPosts.map((post, index) => (
             <BlogCard key={post.id} post={post} index={index} locale={locale} />
           ))}

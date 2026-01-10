@@ -8,7 +8,8 @@ import { CitySection } from '@/components/CitySection'
 import { BlogSection } from '@/components/BlogSection'
 import { Footer } from '@/components/Footer'
 
-export default function HomePage({ params: { locale } }) {
+export default async function HomePage({ params }) {
+  const { locale } = await params
   // Habilitar static rendering
   setRequestLocale(locale)
   
