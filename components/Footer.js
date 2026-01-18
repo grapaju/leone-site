@@ -94,13 +94,13 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-light/70">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
-                <a href="tel:+554733671234" className="hover:text-gold transition-colors">
+                <a href="tel:+554733668848" className="hover:text-gold transition-colors">
                   {tContact('phoneValue')}
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-light/70">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
-                <a href="mailto:contato@leonepavan.com.br" className="hover:text-gold transition-colors">
+                <a href="mailto:vendas@leonepavan.com.br" className="hover:text-gold transition-colors">
                   {tContact('emailValue')}
                 </a>
               </li>
@@ -145,7 +145,7 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gold/10">
-        <div className="container mx-auto px-6 py-6">
+        <div className="container mx-auto px-4 sm:px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-light/50">
             <p>{t('rights')}</p>
             <div className="flex gap-6">

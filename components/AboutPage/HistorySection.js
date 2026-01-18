@@ -5,11 +5,14 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 export function HistorySection() {
   const t = useTranslations('about.history')
   const ref = useRef(null)
+  const isMobile = useIsMobile()
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const inView = isMobile ? true : isInView
 
   const timeline = ['foundation', 'mirante', 'consolidation', 'bombinhas', 'today']
   const portfolio = [
@@ -19,7 +22,7 @@ export function HistorySection() {
   ]
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 section-dark relative overflow-hidden">
+    <section ref={ref} className="py-24 md:py-32 px-4 sm:px-6 section-dark relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute top-1/2 left-1/3 w-[600px] h-[600px] bg-gold rounded-full blur-[140px]" />
@@ -28,18 +31,18 @@ export function HistorySection() {
       <div className="max-w-[1120px] mx-auto relative z-10">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          initial={isMobile ? false : { opacity: 0, y: 25 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={isMobile ? { duration: 0 } : { duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 md:mb-20"
         >
           {/* Decorative line with glow */}
           <div className="relative mb-8">
             <motion.div
               className="w-20 h-[2px] bg-gradient-to-r from-gold via-gold/50 to-transparent"
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.9, delay: 0.2 }}
+              initial={isMobile ? false : { scaleX: 0, opacity: 0 }}
+              animate={inView ? { scaleX: 1, opacity: 1 } : {}}
+              transition={isMobile ? { duration: 0 } : { duration: 0.9, delay: 0.2 }}
               style={{ transformOrigin: 'left' }}
             />
             <div className="absolute inset-0 w-20 h-[2px] bg-gradient-to-r from-gold to-transparent blur-sm" />
@@ -56,16 +59,16 @@ export function HistorySection() {
         <div className="grid lg:grid-cols-[1fr,1fr] gap-12 md:gap-16 items-start">
           {/* Left: Portfolio Bento Grid */}
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            initial={isMobile ? false : { opacity: 0, x: -25 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="grid grid-cols-2 gap-4 md:gap-5"
           >
             {/* Mirante - Large Card (2 rows) */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              initial={isMobile ? false : { opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.3 }}
               className="row-span-2 group relative overflow-hidden rounded-3xl glass-subtle hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 hover:-translate-y-1"
             >
               <div className="relative h-full min-h-[500px] md:min-h-[550px] overflow-hidden">
@@ -97,9 +100,9 @@ export function HistorySection() {
 
             {/* Palazzo - Top Right */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              initial={isMobile ? false : { opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.4 }}
               className="group relative overflow-hidden rounded-3xl glass-subtle hover:shadow-xl hover:shadow-gold/10 transition-all duration-500 hover:-translate-y-1"
             >
               <div className="relative aspect-[1/1] overflow-hidden">
@@ -131,9 +134,9 @@ export function HistorySection() {
 
             {/* Portal - Bottom Right */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              initial={isMobile ? false : { opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.5 }}
               className="group relative overflow-hidden rounded-3xl glass-subtle hover:shadow-xl hover:shadow-gold/10 transition-all duration-500 hover:-translate-y-1"
             >
               <div className="relative aspect-[1/1] overflow-hidden">
@@ -166,9 +169,9 @@ export function HistorySection() {
 
           {/* Right: Premium Timeline with connector line */}
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            initial={isMobile ? false : { opacity: 0, x: 25 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
             {/* Vertical connector line with gradient */}
@@ -179,9 +182,9 @@ export function HistorySection() {
               {timeline.map((item, index) => (
                 <motion.div
                   key={item}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.4 + (0.1 * index), ease: [0.22, 1, 0.36, 1] }}
+                  initial={isMobile ? false : { opacity: 0, x: 20 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.4 + (0.1 * index), ease: [0.22, 1, 0.36, 1] }}
                   className="flex gap-6 items-start group"
                 >
                   {/* Year badge with premium glass effect */}
@@ -199,7 +202,7 @@ export function HistorySection() {
                   {/* Content with glass card */}
                   <div className="flex-1 pt-1">
                     <div className="glass-subtle rounded-2xl p-5 md:p-6 group-hover:border-white/[0.16] transition-all duration-500">
-                      <p className="text-[0.95rem] md:text-base leading-[1.75] text-light/85 text-justify">
+                      <p className="text-[0.95rem] md:text-base leading-[1.75] text-light/85 text-left">
                         {t(`timeline.${item}.text`)}
                       </p>
                     </div>

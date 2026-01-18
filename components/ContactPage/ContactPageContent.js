@@ -83,9 +83,9 @@ export function ContactPageContent() {
   const getAnimationProps = (delay = 0) => {
     if (shouldReduceMotion || isMobile) {
       return {
-        initial: { opacity: 0.8 },
-        animate: { opacity: 1 },
-        transition: { duration: 0.3, delay: delay * 0.1 }
+        initial: false,
+        animate: { opacity: 1, x: 0, y: 0, scale: 1 },
+        transition: { duration: 0 }
       }
     }
     
@@ -101,20 +101,20 @@ export function ContactPageContent() {
     {
       icon: Building2,
       title: 'Endereço Principal',
-      description: 'Balneário Camboriú - SC',
-      link: '#'
+      description: 'Rua 901 nº 431 – Ed. Central Park – Sala 1101',
+      link: 'https://maps.google.com/?q=Rua+901+431+Balneario+Camboriu'
     },
     {
       icon: Phone,
       title: 'Telefone',
-      description: '+55 (47) 99999-9999',
-      link: 'tel:+5547999999999'
+      description: '(47) 3366-8848',
+      link: 'tel:+554733668848'
     },
     {
       icon: Mail,
       title: 'E-mail',
-      description: 'contato@leonepavan.com.br',
-      link: 'mailto:contato@leonepavan.com.br'
+      description: 'vendas@leonepavan.com.br',
+      link: 'mailto:vendas@leonepavan.com.br'
     },
     {
       icon: Clock,
@@ -333,9 +333,9 @@ export function ContactPageContent() {
                 {/* Status Messages */}
                 {formStatus === 'success' && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={isMobile ? false : { opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={isMobile ? { duration: 0 } : { duration: 0.3 }}
                     className="flex items-center gap-3 p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400"
                   >
                     <CheckCircle className="w-5 h-5" />
@@ -345,9 +345,9 @@ export function ContactPageContent() {
 
                 {formStatus === 'error' && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={isMobile ? false : { opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={isMobile ? { duration: 0 } : { duration: 0.3 }}
                     className="flex items-center gap-3 p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400"
                   >
                     <AlertCircle className="w-5 h-5" />

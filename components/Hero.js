@@ -1,12 +1,23 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { ChevronDown } from 'lucide-react'
+import { useIsMobile } from '@/lib/useIsMobile'
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export function Hero() {
   const t = useTranslations('hero')
+  const isMobile = useIsMobile()
+  const [showVideo, setShowVideo] = useState(false)
+
+  useEffect(() => {
+    // Só carrega o vídeo em desktop após um pequeno delay
+    if (!isMobile) {
+      const timer = setTimeout(() => setShowVideo(true), 100)
+      return () => clearTimeout(timer)
+    }
+  }, [isMobile])
 
   const scrollToProjects = () => {
     document.getElementById('empreendimentos')?.scrollIntoView({ behavior: 'smooth' })
@@ -14,20 +25,39 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+      {/* Background - Video para desktop, imagem para mobile */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source
-            src="/videos/bc_praia.mp4"
-            type="video/mp4"
-          />
-        </video>
+        {isMobile ? (
+          // Mobile: usa imagem estática para melhor performance
+          <div className="relative w-full h-full">
+            <Image
+              src="/imagens/Balneário Camboriú/orla-bc-lateral-dia.jpg"
+              alt="Balneário Camboriú"
+              fill
+              priority
+              quality={85}
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        ) : (
+          // Desktop: usa vídeo
+          showVideo && (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+              preload="none"
+            >
+              <source
+                src="/videos/bc_praia.mp4"
+                type="video/mp4"
+              />
+            </video>
+          )
+        )}
         {/* Elegant Glass Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-dark-base/70 via-[#2B2116]/65 to-dark-base/80" />
         {/* Additional radial gradient for depth */}
@@ -35,80 +65,47 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-5xl mx-auto space-y-8"
-        >
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center pt-8 md:pt-16">
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 md:space-y-10">
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="inline-block"
-          >
+          <div className="inline-block">
             <span className="inline-block glass-subtle rounded-full px-4 py-2 md:px-6 md:py-3 text-[0.65rem] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.2em] text-gold font-medium">
               {t('badge')}
             </span>
-          </motion.div>
+          </div>
 
           {/* Title */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-light leading-tight px-4 sm:px-0"
-          >
+          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-light tracking-tight text-light leading-snug px-4 sm:px-0">
             {t('title')}
-          </motion.h1>
+          </h1>
 
           {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl text-light/85 max-w-3xl mx-auto leading-relaxed px-4 sm:px-6"
-          >
+          <p className="text-base sm:text-lg md:text-xl text-light/85 max-w-2xl mx-auto leading-loose px-4 sm:px-6">
             {t('subtitle')}
-          </motion.p>
+          </p>
 
           {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="pt-4 px-4"
-          >
+          <div className="pt-4 px-4">
             <Button
               onClick={scrollToProjects}
-              variant="gold"
+              variant="glass"
               size="xl"
-              className="group w-full sm:w-auto"
+              className="w-full sm:w-auto border-gold/40 text-gold hover:bg-gold/10 hover:border-gold/60"
             >
               {t('cta')}
-              <ChevronDown className="ml-2 group-hover:translate-y-1 transition-transform" />
             </Button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 border-2 border-gold/30 rounded-full flex items-start justify-center p-2"
-        >
-          <div className="w-1.5 h-3 bg-gold rounded-full" />
-        </motion.div>
-      </motion.div>
+      {/* Scroll Indicator - apenas desktop */}
+      {!isMobile && (
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="w-6 h-10 border-2 border-gold/30 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-gold rounded-full" />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

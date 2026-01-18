@@ -36,9 +36,9 @@ export async function generateMetadata({ params }) {
   }
 
   const descriptions = {
-    pt: 'Conteúdo exclusivo sobre investimentos imobiliários, arquitetura e lifestyle em Balneário Camboriú.',
-    en: 'Exclusive content about real estate investments, architecture and lifestyle in Balneário Camboriú.',
-    es: 'Contenido exclusivo sobre inversiones inmobiliarias, arquitectura y estilo de vida en Balneário Camboriú.'
+    pt: 'Conteúdo exclusivo sobre investimentos imobiliários, arquitetura e lifestyle no litoral catarinense.',
+    en: 'Exclusive content about real estate investments, architecture and lifestyle in Santa Catarina coast.',
+    es: 'Contenido exclusivo sobre inversiones inmobiliarias, arquitectura y estilo de vida en la costa de Santa Catarina.'
   }
 
   return {

@@ -1,8 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules'
@@ -61,33 +60,50 @@ const investmentFeatures = [
 export function CitySection() {
   const t = useTranslations('home')
   const [activeSlide, setActiveSlide] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const accentRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    if (accentRef.current) {
+      observer.observe(accentRef.current)
+    }
+
+    return () => {
+      if (accentRef.current) {
+        observer.unobserve(accentRef.current)
+      }
+    }
+  }, [])
 
   return (
-    <section className="py-12 sm:py-24 md:py-32 section-dark relative overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+    <section className="py-12 sm:py-20 md:py-28 section-dark relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Text Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-4 sm:space-y-6 lg:order-1"
-          >
+          <div className="space-y-4 sm:space-y-6 lg:order-1">
             {/* Accent line */}
-            <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent" />
+            <div 
+              ref={accentRef}
+              className={`h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent transition-all duration-700 ease-out ${
+                isVisible ? 'w-14 opacity-100' : 'w-0 opacity-0'
+              }`}
+            />
 
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-light tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-4xl font-light text-light tracking-tight leading-tight">
               Investir em Balneário Camboriú
             </h2>
 
             <p className="text-sm sm:text-lg text-light/70 leading-relaxed">
-              O investimento mais inteligente do litoral brasileiro, com retorno comprovado e potencial crescente.
-            </p>
-
-            <p className="text-sm sm:text-base text-light/80 leading-relaxed">
-              Balneário Camboriú oferece o que todo investidor busca: valorização consistente, alta demanda de locação, 
-              perfil internacional de compradores e infraestrutura de primeira linha que garante liquidez e rentabilidade.
+              Balneário Camboriú é um dos mercados imobiliários mais sólidos do Brasil. Infraestrutura, qualidade de vida e constante valorização tornam a cidade um polo estratégico para quem busca segurança patrimonial e retorno consistente. A Leone Pavan atua nesse cenário com projetos alinhados à vocação da cidade e às expectativas do investidor moderno.
             </p>
 
             {/* Amenities Grid */}
@@ -95,17 +111,13 @@ export function CitySection() {
               {investmentFeatures.map((feature, index) => {
                 const Icon = feature.icon
                 return (
-                  <motion.div
+                  <div
                     key={feature.label}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
                     className="flex flex-col items-center gap-1.5 sm:gap-2 p-2 sm:p-4 rounded-lg sm:rounded-xl glass-subtle hover:bg-gold/5 transition-colors group"
                   >
                     <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold group-hover:scale-110 transition-transform" strokeWidth={1.5} />
                     <span className="text-[0.65rem] sm:text-xs text-light/70 text-center leading-tight">{feature.label}</span>
-                  </motion.div>
+                  </div>
                 )
               })}
             </div>
@@ -117,16 +129,10 @@ export function CitySection() {
                 </Link>
               </Button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Carousel Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:order-2"
-          >
+          <div className="lg:order-2">
             <div className="relative aspect-[4/3] rounded-[24px] overflow-hidden glass">
               <Swiper
                 modules={[Autoplay, Pagination, EffectFade]}
@@ -173,7 +179,7 @@ export function CitySection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

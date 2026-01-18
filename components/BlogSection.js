@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
@@ -51,17 +51,11 @@ function BlogCard({ post, index, locale }) {
   }
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group"
-    >
+    <article className="group">
       <Link href={`/blog/${post.id}`}>
-        <div className="glass-subtle rounded-[20px] overflow-hidden hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 hover:-translate-y-2">
+        <div className="glass-subtle rounded-[18px] overflow-hidden hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 hover:-translate-y-1">
           {/* Image */}
-          <div className="relative aspect-[16/10] overflow-hidden">
+          <div className="relative aspect-[16/11] overflow-hidden">
             <Image
               src={post.image}
               alt={titles[locale] || titles.pt}
@@ -79,7 +73,7 @@ function BlogCard({ post, index, locale }) {
           </div>
 
           {/* Content */}
-          <div className="p-5 sm:p-6 space-y-3 sm:space-y-4">
+          <div className="p-4 sm:p-5 space-y-2 sm:space-y-3">
             {/* Meta */}
             <div className="flex items-center gap-3 sm:gap-4 text-xs text-light/50">
               <div className="flex items-center gap-1.5">
@@ -99,7 +93,7 @@ function BlogCard({ post, index, locale }) {
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-medium text-light group-hover:text-gold transition-colors line-clamp-2 leading-tight">
+            <h3 className="text-base sm:text-lg font-medium text-light group-hover:text-gold transition-colors line-clamp-2 leading-tight">
               {titles[locale] || titles.pt}
             </h3>
 
@@ -116,61 +110,76 @@ function BlogCard({ post, index, locale }) {
           </div>
         </div>
       </Link>
-    </motion.article>
+    </article>
   )
 }
 
 export function BlogSection({ locale = 'pt' }) {
   const t = useTranslations('home')
+  const [isVisible, setIsVisible] = useState(false)
+  const headerRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current)
+    }
+
+    return () => {
+      if (headerRef.current) {
+        observer.unobserve(headerRef.current)
+      }
+    }
+  }, [])
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden" style={{
+    <section className="py-16 sm:py-20 md:py-28 relative overflow-hidden" style={{
       background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)), rgba(58, 46, 34, 0.15)',
       backdropFilter: 'blur(20px)',
       WebkitBackdropFilter: 'blur(20px)'
     }}>
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         {/* Header */}
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
-        >
+        <header ref={headerRef} className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           {/* Accent line */}
-          <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mx-auto mb-4 sm:mb-6" />
+          <div 
+            className={`h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mx-auto mb-4 sm:mb-6 transition-all duration-700 ease-out ${
+              isVisible ? 'w-14 opacity-100' : 'w-0 opacity-0'
+            }`}
+          />
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-light mb-3 sm:mb-4 tracking-tight">
-            Conteúdo para quem busca mais
+          <h2 className="text-3xl sm:text-4xl md:text-4xl font-light text-light mb-3 sm:mb-4 tracking-tight">
+            Visão, mercado e arquitetura
           </h2>
           <p className="text-base sm:text-lg text-light/70 leading-relaxed">
-            Notícias, guias e inspirações para quem está no mercado imobiliário.
+            Conteúdos editoriais sobre tendências, investimento e desenvolvimento urbano.
           </p>
-        </motion.header>
+        </header>
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {blogPosts.map((post, index) => (
             <BlogCard key={post.id} post={post} index={index} locale={locale} />
           ))}
         </div>
 
         {/* View All Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center"
-        >
+        <div className="text-center">
           <Button asChild variant="ghost" size="lg" className="text-gold hover:text-light hover:bg-gold/10">
             <Link href="/blog">
               Ver todos os artigos
               <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -36,9 +36,9 @@ export async function generateMetadata({ params }) {
   }
 
   const descriptions = {
-    pt: 'Entre em contato conosco para conhecer nossos empreendimentos exclusivos em Balneário Camboriú.',
-    en: 'Contact us to learn about our exclusive developments in Balneário Camboriú.',
-    es: 'Contáctanos para conocer nuestros emprendimientos exclusivos en Balneário Camboriú.'
+    pt: 'Entre em contato conosco para conhecer nossos empreendimentos de alto padrão.',
+    en: 'Contact us to learn about our luxury developments.',
+    es: 'Contáctanos para conocer nuestros emprendimientos de alto estándar.'
   }
 
   return {

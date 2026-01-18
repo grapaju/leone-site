@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowLeft, Calendar, Clock, Share2, Facebook, Twitter, Linkedin } from 'lucide-react'
 import { Link } from '@/lib/navigation'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 // Conteúdo dos posts
 const postsContent = {
@@ -178,6 +179,7 @@ const postsContent = {
 }
 
 export function BlogPostContent({ slug }) {
+  const isMobile = useIsMobile()
   const post = postsContent[slug]
   
   if (!post) {
@@ -208,11 +210,11 @@ export function BlogPostContent({ slug }) {
           <div className="absolute inset-0 bg-gradient-to-r from-dark-base/80 via-transparent to-dark-base/40" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-6 pt-16 pb-24">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-16 pb-24">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={isMobile ? false : { opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
             {/* Back Button */}
@@ -279,12 +281,12 @@ export function BlogPostContent({ slug }) {
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)'
       }}>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.article
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={isMobile ? false : { opacity: 0, y: 30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+            viewport={isMobile ? undefined : { once: true }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
             <div className="prose prose-invert prose-xl prose-gold max-w-none">
@@ -294,10 +296,10 @@ export function BlogPostContent({ slug }) {
 
           {/* Call to Action */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={isMobile ? false : { opacity: 0, y: 30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+            viewport={isMobile ? undefined : { once: true }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
             className="max-w-4xl mx-auto mt-16"
           >
             <div className="glass rounded-[24px] p-8 md:p-12 text-center border border-gold/20">
@@ -305,7 +307,7 @@ export function BlogPostContent({ slug }) {
                 Interessado em nossos empreendimentos?
               </h3>
               <p className="text-light/80 mb-8 text-lg leading-relaxed">
-                Conheça nossos projetos exclusivos em Balneário Camboriú e descubra 
+                Conheça nossos projetos de alto padrão no litoral catarinense e descubra 
                 oportunidades únicas de investimento.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

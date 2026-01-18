@@ -13,13 +13,13 @@
   },
   "hero": {
     "badge": "Since 2004 • Balneário Camboriú",
-    "title": "Building dreams since 2004",
-    "subtitle": "Projects designed to transform lives and enhance investments.",
+    "title": "Building value, trust and stories since 2004",
+    "subtitle": "Luxury developments in strategic locations along the Santa Catarina coast, with technical excellence and long-term value appreciation.",
     "cta": "Explore our developments"
   },
   "projects": {
     "title": "Our developments",
-    "subtitle": "Projects with intelligent design, strategic location and impeccable execution.",
+    "subtitle": "Strategic location, intelligent design and proven value appreciation.",
     "status": {
       "completed": "Completed",
       "inProgress": "Under Construction",
@@ -42,22 +42,23 @@
   },
   "differentials": {
     "title": "Why choose Leone Pavan",
-    "subtitle": "Two decades of excellence in luxury construction.",
+    "subtitle": "Criteria that stand the test of time",
+    "text": "We go beyond handing over the keys. Our work is guided by technical choices, constructive responsibility and respect for those who invest and those who live. We develop projects designed to offer peace of mind today and security for the future.",
+    "locations": {
+      "title": "Strategically chosen locations",
+      "description": "Properties positioned in consolidated regions or with high appreciation potential, always considering urban context and quality of life."
+    },
     "quality": {
-      "title": "Certified quality",
-      "description": "PBQP-H and ISO 9001 certifications guarantee excellence standards in all construction processes."
+      "title": "Construction rigor and finishing",
+      "description": "Modern construction methods combined with attention to detail, high-performance materials and specialized workforce."
     },
-    "team": {
-      "title": "Specialized team",
-      "description": "Architects and engineers with decades of experience in luxury developments."
+    "transparency": {
+      "title": "Transparency and security",
+      "description": "Clear documentary and legal monitoring at all stages, with continuous and responsible communication."
     },
-    "delivery": {
-      "title": "On-time delivery",
-      "description": "Strictly followed schedule, with technical planning and construction control."
-    },
-    "support": {
-      "title": "Dedicated after-sales",
-      "description": "Complete follow-up after key delivery, ensuring client peace of mind."
+    "sustainability": {
+      "title": "Urban and environmental responsibility",
+      "description": "Projects that respect the surroundings, follow environmental standards and contribute to the balanced development of cities."
     }
   },
   "contact": {
@@ -79,11 +80,11 @@
     },
     "info": {
       "address": "Address",
-      "addressValue": "Av. Atlântica, 123 - Downtown, Balneário Camboriú/SC",
+      "addressValue": "Rua 901 nº 431 – Central Park Building – Suite 1101, Balneário Camboriú/SC",
       "phone": "Phone",
-      "phoneValue": "+55 (47) 3367-1234",
+      "phoneValue": "+55 (47) 3366-8848",
       "email": "Email",
-      "emailValue": "contact@leonepavan.com.br",
+      "emailValue": "vendas@leonepavan.com.br",
       "hours": "Hours",
       "hoursValue": "Monday to Friday: 8am to 6pm"
     }
@@ -124,31 +125,33 @@
       "intro": "Since 2004, when it started its activities, Leone Pavan Developments has taken a serious approach to every project. With highly qualified professionals, first-rate materials and state-of-the-art technology, we constantly evolve and refine our processes."
     },
     "intro": {
-      "text": "Since 2004, when it started its activities, Leone Pavan Developments has assumed a serious stance with each project executed. Operating in the construction market with highly qualified professionals, using first-rate raw materials and state-of-the-art technology, we evolve and improve our knowledge constantly."
+      "title": "Building our history",
+      "text": "Since 2004, Leone Pavan Developments has been creating residential projects that combine strategic vision, construction rigor and respect for time. Our trajectory follows the urban evolution of Balneário Camboriú and the Santa Catarina coast, always guided by responsible decisions and commitment to quality at every stage.",
+      "text2": "We build with the conviction that true value lies in consistency: in careful site selection, precise execution and delivery of developments prepared to remain relevant over the years."
     },
     "history": {
-      "title": "Our journey in construction",
-      "text": "Founded in May 2004 in Balneário Camboriú, Leone Construtora e Incorporadora — Leone Pavan Developments — blends industrial technology with handcrafted care. We operate on the Santa Catarina coast focusing on mid- and high-standard residential projects, leading the full cycle: technical site scouting, design, execution and delivery, with top-tier materials, qualified teams and architectural innovation to ensure safety, value and well-being.",
+      "title": "Our Journey",
+      "text": "Each delivered development represents more than a completed project. It represents progress in brand maturity, process refinement and consolidation of our own construction standards.",
       "timeline": {
         "foundation": {
           "year": "2004",
-          "text": "Foundation in Balneário Camboriú/SC, focused on residential projects."
+          "text": "Foundation of Leone Pavan Developments in Balneário Camboriú, focused on residential projects with a clear mission: building with responsibility, criteria and long-term vision."
         },
         "mirante": {
           "year": "2009",
-          "text": "SPE for Mirante do Atlântico, a milestone in high-standard projects overlooking the sea."
+          "text": "Mirante do Atlântico marks the company's entry into the high-standard segment, with a project that values views, location and rigorous technical execution."
         },
         "consolidation": {
           "year": "2014",
-          "text": "Consolidation in BC with deliveries such as Vila Esperança and Portal dos Municípios."
+          "text": "Consolidation in Balneário Camboriú with deliveries such as Vila Esperança and Portal dos Municípios, reinforcing brand presence in strategic areas of the city."
         },
         "bombinhas": {
-          "year": "2018",
-          "text": "Expansion to Bombinhas with Palazzo del Mare, steps from the beach."
+          "year": "2019",
+          "text": "Expansion to Bombinhas with Palazzo del Mare, broadening operations on the Santa Catarina coast and strengthening positioning in premium locations."
         },
         "today": {
           "year": "2024",
-          "text": "Mature portfolio in SC, stronger digital presence and new launches around BC/Balneário Shopping."
+          "text": "Mature portfolio in Santa Catarina, institutional strengthening and new projects aligned with urban evolution and demands of a more conscious and demanding market."
         }
       },
       "portfolio": {
@@ -182,26 +185,26 @@
       "items": {
         "mission": {
           "title": "Mission",
-          "description": "Build with technical excellence and ethics, turning investments into safe homes and projects that enhance Santa Catarina's urban landscape."
+          "description": "Build with technical excellence and responsibility, developing projects that offer security, comfort and real appreciation over time."
         },
         "vision": {
           "title": "Vision",
-          "description": "Be recognized as the most reliable builder on the Santa Catarina coast, known for on-time delivery and careful finishing."
+          "description": "Establish ourselves as a reference builder on the Santa Catarina coast, recognized for consistent delivery, brand solidity and permanent attention to detail."
         },
         "values": {
           "title": "Values",
-          "description": "Tradition, transparency in relationships, financial solidity, and construction rigor at every stage."
+          "description": "Tradition in relationships, transparency in decisions, construction rigor at every stage and continuous commitment to quality and the heritage of those who trust our work."
         }
       }
     },
     "differential": {
-      "title": "Why choose Leone Construtora?",
-      "text": "We go beyond key handover: our focus is on consistent, reliable real estate assets. Commitment to quality, transparency and responsibility to ensure peace of mind for investors and comfort for residents.",
+      "title": "Criteria that endure over time",
+      "text": "We go beyond key handover. Our work is guided by technical choices, construction responsibility and respect for those who invest and those who live. We develop projects designed to offer peace of mind today and security for the future.",
       "items": {
-        "locations": "Privileged locations: sites strategically positioned in areas with sound appreciation and established views across Santa Catarina’s main coastal cities.",
-        "quality": "Construction rigor and finishing: modern methods with careful detailing, recognized-brand materials and specialized workforce.",
-        "transparency": "Transparency and security: clear legal and document tracking at every stage, with ongoing reporting to investors.",
-        "sustainability": "Urban sustainability: projects designed to harmonize with surroundings, comply with environmental rules and foster responsible city development."
+        "locations": "Strategically chosen locations: Sites positioned in consolidated areas or with high appreciation potential, always considering urban context and quality of life.",
+        "quality": "Construction rigor and finishing: Modern construction methods combined with attention to detail, high-performance materials and specialized workforce.",
+        "transparency": "Transparency and security: Clear legal and document tracking at all stages, with continuous and responsible communication.",
+        "sustainability": "Urban and environmental responsibility: Projects that respect surroundings, follow environmental standards and contribute to balanced city development."
       }
     },
     "balneario": {

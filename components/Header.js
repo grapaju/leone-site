@@ -33,7 +33,7 @@ export function Header() {
 
   return (
     <header
-      className={`site-header ${scrolled ? 'scrolled' : ''}`}
+      className={`site-header ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-open' : ''}`}
     >
       <div className="header-glass">
         {/* Logo */}
@@ -100,6 +100,7 @@ export function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden w-10 h-10 flex items-center justify-center text-light hover:text-gold transition-colors"
             aria-label="Menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -108,9 +109,10 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-[999] pt-[100px] pointer-events-auto">
-          <div className="absolute inset-0 bg-dark-base/98 backdrop-blur-xl">
-            <nav className="container mx-auto px-6 py-8 flex flex-col space-y-4">
+        <div className="md:hidden fixed inset-0 z-[999] pointer-events-auto">
+          <div className="absolute inset-0 bg-[rgba(26,20,14,0.98)] backdrop-blur-xl" />
+          <div className="relative h-full overflow-y-auto pt-[110px]">
+            <nav className="container mx-auto px-4 sm:px-6 py-8 flex flex-col space-y-4">
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}

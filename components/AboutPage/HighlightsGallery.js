@@ -2,8 +2,10 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 export function HighlightsGallery() {
+  const isMobile = useIsMobile()
   const images = [
     {
       src: '/imagens/Mirante do Atlantico/Edificio-Mirante-do-Atlantico-Balneario-Camboriu-600x450.jpg',
@@ -16,16 +18,16 @@ export function HighlightsGallery() {
   if (images.length === 0) return null
 
   return (
-    <section className="py-24 md:py-28 px-6">
+    <section className="py-24 md:py-28 px-4 sm:px-6">
       <div className="max-w-[1120px] mx-auto">
         <div className="grid md:grid-cols-3 gap-6">
           {images.map((img, idx) => (
             <motion.div
               key={img.src}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.08 }}
+              initial={isMobile ? false : { opacity: 0, y: 20 }}
+              whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+              viewport={isMobile ? undefined : { once: true }}
+              transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: idx * 0.08 }}
               className="relative rounded-[20px] overflow-hidden glass"
             >
               <Image src={img.src} alt={img.alt} width={800} height={600} className="w-full h-full object-cover" />

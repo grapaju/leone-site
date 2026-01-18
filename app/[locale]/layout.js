@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { locales } from '@/i18n'
+import { MobileOptimizer } from '@/components/MobileOptimizer'
 import '../globals.css'
 
 const raleway = Raleway({
@@ -60,6 +61,7 @@ export default async function LocaleLayout({ children, params }) {
     <html lang={locale} className={raleway.variable} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
+          <MobileOptimizer />
           {children}
         </NextIntlClientProvider>
       </body>

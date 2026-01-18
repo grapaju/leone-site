@@ -13,13 +13,13 @@
   },
   "hero": {
     "badge": "Desde 2004 • Balneário Camboriú",
-    "title": "Construyendo sueños desde 2004",
-    "subtitle": "Proyectos pensados para transformar vidas y valorizar inversiones.",
+    "title": "Construyendo valor, confianza e historias desde 2004",
+    "subtitle": "Emprendimientos de alto estándar en ubicaciones estratégicas de la costa catarinense, con excelencia técnica y valorización a largo plazo.",
     "cta": "Conozca nuestros emprendimientos"
   },
   "projects": {
     "title": "Nuestros emprendimientos",
-    "subtitle": "Proyectos con diseño inteligente, ubicación estratégica y ejecución impecable.",
+    "subtitle": "Ubicación estratégica, arquitectura inteligente y valorización comprobada.",
     "status": {
       "completed": "Finalizado",
       "inProgress": "En Construcción",
@@ -42,22 +42,23 @@
   },
   "differentials": {
     "title": "Por qué elegir Leone Pavan",
-    "subtitle": "Dos décadas de excelencia en construcción de alto estándar.",
+    "subtitle": "Criterios que se mantienen a lo largo del tiempo",
+    "text": "Vamos más allá de la entrega de llaves. Nuestro trabajo está orientado por decisiones técnicas, responsabilidad constructiva y respeto por quien invierte y por quien vive. Desarrollamos emprendimientos pensados para ofrecer tranquilidad hoy y seguridad en el futuro.",
+    "locations": {
+      "title": "Ubicaciones estratégicamente elegidas",
+      "description": "Terrenos posicionados en regiones consolidadas o con alto potencial de valorización, siempre considerando el contexto urbano y la calidad de vida."
+    },
     "quality": {
-      "title": "Calidad certificada",
-      "description": "Las certificaciones PBQP-H e ISO 9001 garantizan estándares de excelencia en todos los procesos constructivos."
+      "title": "Rigor constructivo y acabado",
+      "description": "Métodos constructivos modernos combinados con el cuidado de los detalles, materiales de alto desempeño y mano de obra especializada."
     },
-    "team": {
-      "title": "Equipo especializado",
-      "description": "Arquitectos e ingenieros con décadas de experiencia en emprendimientos de alto estándar."
+    "transparency": {
+      "title": "Transparencia y seguridad",
+      "description": "Seguimiento documental y jurídico claro en todas las etapas, con comunicación continua y responsable."
     },
-    "delivery": {
-      "title": "Entrega en plazo",
-      "description": "Cronograma rigurosamente cumplido, con planificación técnica y control de obra."
-    },
-    "support": {
-      "title": "Posventa dedicado",
-      "description": "Seguimiento completo después de la entrega de llaves, garantizando tranquilidad al cliente."
+    "sustainability": {
+      "title": "Responsabilidad urbana y ambiental",
+      "description": "Proyectos que respetan el entorno, siguen normas ambientales y contribuyen al desarrollo equilibrado de las ciudades."
     }
   },
   "contact": {
@@ -79,19 +80,19 @@
     },
     "info": {
       "address": "Dirección",
-      "addressValue": "Av. Atlântica, 123 - Centro, Balneário Camboriú/SC",
+      "addressValue": "Rua 901 nº 431 – Edificio Central Park – Sala 1101, Balneário Camboriú/SC",
       "phone": "Teléfono",
-      "phoneValue": "+55 (47) 3367-1234",
+      "phoneValue": "+55 (47) 3366-8848",
       "email": "Correo electrónico",
-      "emailValue": "contacto@leonepavan.com.br",
+      "emailValue": "vendas@leonepavan.com.br",
       "hours": "Horario",
       "hoursValue": "Lunes a Viernes: 8h a 18h"
     }
   },
   "aboutHome": {
     "title": "Sobre Leone Pavan",
-    "subtitle": "Tradición e innovación en emprendimientos de alto estándar.",
-    "history": "Desde 2004, Leone Pavan Emprendimientos se destaca en el mercado de Balneário Camboriú por la excelencia en la construcción de emprendimientos de alto estándar. Con una trayectoria sólida y compromiso con la calidad, entregamos proyectos que transforman vidas y valorizan inversiones.",
+    "subtitle": "Dos décadas construyendo valor y confianza en Balneário Camboriú",
+    "history": "Fundada en 2004 en Balneário Camboriú, Leone Pavan se consolidó en el mercado inmobiliario catarinense por la seriedad y excelencia constructiva. Certificada por PBQP-H e ISO 9001, aliamos tecnología, materiales premium y mano de obra calificada, manteniendo el cuidado artesanal en cada detalle.",
     "mission": {
       "title": "Misión",
       "description": "Crear emprendimientos de alto estándar que superen expectativas, combinando diseño, calidad y ubicación privilegiada."
@@ -118,37 +119,39 @@
   },
   "about": {
     "hero": {
-      "badge": "Quiénes Somos",
+      "badge": "Manifiesto",
       "title": "Leone Pavan Emprendimientos",
-      "subtitle": "Compromiso, calidad y excelencia desde 2004.",
-      "intro": "Desde 2004, cuando inició sus actividades, Leone Pavan Emprendimientos asumió una postura de seriedad en cada proyecto. Con profesionales altamente calificados, materiales de primera línea y tecnología de última generación, evolucionamos y refinamos nuestros procesos constantemente."
+      "subtitle": "Construir es un acto de responsabilidad.",
+      "intro": "Desde 2004, Leone Pavan entiende que cada proyecto transforma no solo el entorno urbano, sino también la vida de quienes eligen vivir, invertir y permanecer. No construimos únicamente inmuebles — desarrollamos espacios pensados para perdurar con solidez, confort y relevancia. Creemos que el verdadero alto estándar se encuentra en las decisiones bien tomadas: en la elección del terreno, en la ejecución precisa y en el cuidado de los detalles que sostienen lo que permanece en el tiempo. Nuestra trayectoria se basa en la constancia, el respeto por el tiempo y la valorización del patrimonio familiar. Construimos para el presente, con una mirada clara hacia las próximas generaciones."
     },
     "intro": {
-      "text": "Desde 2004, cuando inició sus actividades, Leone Pavan Emprendimientos asumió una postura de seriedad con cada emprendimiento ejecutado. Actuando en el mercado de la construcción civil con profesionales altamente calificados, utilizando materias primas de primera línea y tecnología de última generación, evolucionamos y perfeccionamos nuestros conocimientos constantemente."
+      "title": "Construyendo nuestra historia",
+      "text": "Desde 2004, Leone Pavan Emprendimientos actúa en el desarrollo de proyectos residenciales que unen visión estratégica, rigor constructivo y respeto por el tiempo. Nuestra trayectoria acompaña la evolución urbana de Balneário Camboriú y del litoral catarinense, siempre guiada por decisiones responsables y el compromiso con la calidad en cada etapa.",
+      "text2": "Construimos con la convicción de que el verdadero valor está en la consistencia: en la elección criteriosa de los terrenos, en la ejecución precisa y en la entrega de emprendimientos preparados para permanecer relevantes a lo largo de los años."
     },
     "history": {
-      "title": "Nuestra trayectoria en la construcción",
-      "text": "Fundada en mayo de 2004 en Balneário Camboriú, Leone Construtora e Incorporadora — Leone Pavan Emprendimientos — une tecnología industrial y cuidado artesanal en cada obra. Actuamos en el litoral catarinense con foco en residenciales de medio y alto estándar, liderando todo el ciclo: prospección técnica de terrenos, proyecto, ejecución y entrega, con materiales de primera línea, equipo calificado e innovación arquitectónica para garantizar seguridad, valorización y bienestar.",
+      "title": "Trayectoria",
+      "text": "Cada emprendimiento entregado representa más que una obra concluida. Representa un avance en la madurez de la marca, en el refinamiento de los procesos y en la consolidación de un estándar constructivo propio.",
       "timeline": {
         "foundation": {
           "year": "2004",
-          "text": "Fundación en Balneário Camboriú/SC, con foco en obras residenciales."
+          "text": "Fundación de Leone Pavan Emprendimientos en Balneário Camboriú, con foco en obras residenciales y una propuesta clara: construir con responsabilidad, criterio y visión a largo plazo."
         },
         "mirante": {
           "year": "2009",
-          "text": "SPE para el Mirante do Atlântico, hito en el segmento de alto estándar con vista al mar."
+          "text": "El Mirante do Atlântico marca la entrada de la empresa en el segmento de alto estándar, con un proyecto que valoriza vista, ubicación y ejecución técnica rigurosa."
         },
         "consolidation": {
           "year": "2014",
-          "text": "Consolidación en BC con entregas como Vila Esperança y Portal dos Municípios."
+          "text": "Consolidación de la actuación en Balneário Camboriú, con entregas como Vila Esperança y Portal dos Municípios, reforzando la presencia de la marca en regiones estratégicas de la ciudad."
         },
         "bombinhas": {
-          "year": "2018",
-          "text": "Expansión a Bombinhas con el Palazzo del Mare, a pocos pasos de la playa."
+          "year": "2019",
+          "text": "Expansión a Bombinhas con el Palazzo del Mare, ampliando la actuación en el litoral catarinense y fortaleciendo el posicionamiento en ubicaciones premium."
         },
         "today": {
           "year": "2024",
-          "text": "Portafolio maduro en SC, refuerzo digital y nuevos lanzamientos en el eje BC/Balneário Shopping."
+          "text": "Portafolio maduro en Santa Catarina, fortalecimiento institucional de la marca y nuevos proyectos alineados a la evolución urbana y las demandas de un mercado más consciente y exigente."
         }
       },
       "portfolio": {
@@ -182,26 +185,26 @@
       "items": {
         "mission": {
           "title": "Misión",
-          "description": "Construir con excelencia técnica y ética, convirtiendo inversiones en hogares seguros y proyectos que valorizan el paisaje urbano de Santa Catarina."
+          "description": "Construir con excelencia técnica y responsabilidad, desarrollando emprendimientos que ofrezcan seguridad, confort y valorización real a lo largo del tiempo."
         },
         "vision": {
           "title": "Visión",
-          "description": "Consolidarse como la constructora más confiable del litoral catarinense, reconocida por la puntualidad y el cuidado en los acabados."
+          "description": "Consolidarse como una constructora de referencia en el litoral catarinense, reconocida por la consistencia de las entregas, solidez de la marca y cuidado permanente con los detalles."
         },
         "values": {
           "title": "Valores",
-          "description": "Tradición, transparencia en las relaciones, solidez financiera y rigor constructivo en cada etapa."
+          "description": "Tradición en las relaciones, transparencia en las decisiones, rigor constructivo en cada etapa y compromiso continuo con la calidad y el patrimonio de quien confía en nuestro trabajo."
         }
       }
     },
     "differential": {
-      "title": "¿Por qué elegir a Leone Construtora?",
-      "text": "Vamos más allá de la entrega de llaves: nuestro foco es ofrecer activos inmobiliarios consistentes y confiables. Compromiso con la calidad, la transparencia y la responsabilidad para garantizar tranquilidad a quien invierte y confort a quien vive.",
+      "title": "Criterios que se mantienen a lo largo del tiempo",
+      "text": "Vamos más allá de la entrega de llaves. Nuestro trabajo está orientado por decisiones técnicas, responsabilidad constructiva y respeto por quien invierte y por quien vive. Desarrollamos emprendimientos pensados para ofrecer tranquilidad hoy y seguridad en el futuro.",
       "items": {
-        "locations": "Ubicaciones privilegiadas: terrenos estratégicos en áreas de buena valorización y vistas consolidadas en los principales balnearios de Santa Catarina.",
-        "quality": "Rigor constructivo y acabado: métodos modernos con cuidado en los detalles, insumos de marcas reconocidas y mano de obra especializada.",
-        "transparency": "Transparencia y seguridad: seguimiento documental y jurídico claro en cada etapa, con rendición continua a los inversores.",
-        "sustainability": "Sustentabilidad urbana: proyectos pensados para armonizar con el entorno, respetar normas ambientales y promover el desarrollo responsable de las ciudades."
+        "locations": "Ubicaciones estratégicamente elegidas: Terrenos posicionados en regiones consolidadas o con alto potencial de valorización, siempre considerando el contexto urbano y la calidad de vida.",
+        "quality": "Rigor constructivo y acabado: Métodos constructivos modernos combinados con el cuidado de los detalles, materiales de alto desempeño y mano de obra especializada.",
+        "transparency": "Transparencia y seguridad: Seguimiento documental y jurídico claro en todas las etapas, con comunicación continua y responsable.",
+        "sustainability": "Responsabilidad urbana y ambiental: Proyectos que respetan el entorno, siguen normas ambientales y contribuyen al desarrollo equilibrado de las ciudades."
       }
     },
     "balneario": {

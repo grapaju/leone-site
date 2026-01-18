@@ -1,53 +1,65 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { CheckCircle2, Users, Clock, Headset } from 'lucide-react'
+import { MapPin, Award, Shield, Leaf } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const differentials = [
   {
-    icon: CheckCircle2,
+    icon: MapPin,
+    key: 'locations',
+  },
+  {
+    icon: Award,
     key: 'quality',
   },
   {
-    icon: Users,
-    key: 'team',
+    icon: Shield,
+    key: 'transparency',
   },
   {
-    icon: Clock,
-    key: 'delivery',
-  },
-  {
-    icon: Headset,
-    key: 'support',
+    icon: Leaf,
+    key: 'sustainability',
   },
 ]
 
-function DifferentialCard({ differential, index }) {
+function DifferentialItem({ differential, index, isVisible }) {
   const t = useTranslations('differentials')
   const Icon = differential.icon
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass-subtle rounded-[20px] p-6 sm:p-8 hover:shadow-xl hover:shadow-gold/5 transition-all duration-500 group"
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      animate={isVisible ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.15 }}
+      className="relative group"
     >
-      {/* Icon */}
-      <div className="w-14 h-14 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
-        <Icon className="w-6 h-6 text-gold" strokeWidth={1.5} />
+      <div className="flex gap-4 sm:gap-5">
+        {/* Icon with glow */}
+        <div className="relative flex-shrink-0 pt-1">
+          <div className="absolute inset-0 bg-gold/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center group-hover:bg-gold/15 group-hover:border-gold/30 transition-all duration-500">
+            <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold" strokeWidth={1.5} />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 pb-8 sm:pb-10 last:pb-0">
+          <h3 className="text-lg sm:text-xl font-medium text-light mb-2 sm:mb-3 group-hover:text-gold transition-colors duration-300">
+            {t(`${differential.key}.title`)}
+          </h3>
+          <p className="text-sm sm:text-base text-light/75 leading-relaxed">
+            {t(`${differential.key}.description`)}
+          </p>
+        </div>
       </div>
 
-      {/* Content */}
-      <h3 className="text-xl font-medium text-light mb-3 group-hover:text-gold transition-colors">
-        {t(`${differential.key}.title`)}
-      </h3>
-      <p className="text-light/70 leading-relaxed text-sm">
-        {t(`${differential.key}.description`)}
-      </p>
+      {/* Connector line */}
+      {index < differentials.length - 1 && (
+        <div className="absolute left-6 sm:left-7 top-14 sm:top-16 bottom-0 w-[2px] bg-gradient-to-b from-gold/30 via-gold/10 to-transparent" />
+      )}
     </motion.div>
   )
 }
@@ -55,104 +67,95 @@ function DifferentialCard({ differential, index }) {
 export function AboutSection() {
   const t = useTranslations('differentials')
   const tAbout = useTranslations('aboutHome')
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.2 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
+  }, [])
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden">
+    <section ref={sectionRef} className="py-16 sm:py-20 md:py-28 relative overflow-hidden section-dark">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gold rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-gold rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gold rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-16 sm:mb-24">
-          {/* Image Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-[1200px]">
+        {/* Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column: Title, Text & Logo */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative aspect-[4/3] rounded-[24px] overflow-hidden glass">
-              <Image
-                src="/imagens/Heros/bc_molhe.png"
-                alt="Balneário Camboriú"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-dark-base/50 to-transparent" />
-            </div>
-
-            {/* Floating card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-8 glass-form rounded-2xl p-4 sm:p-6 max-w-[280px] sm:max-w-xs"
-            >
-              <div className="flex items-center gap-3 sm:gap-4">
-                <div className="text-3xl sm:text-4xl font-light text-gold">20+</div>
-                <div className="text-xs sm:text-sm text-light/80 leading-tight">
-                  Anos construindo excelência
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Text Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-4 sm:space-y-6"
+            className="space-y-6 sm:space-y-8 lg:sticky lg:top-24"
           >
             {/* Accent line */}
-            <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent" />
+            <div className="h-[2px] w-16 bg-gradient-to-r from-gold via-gold/50 to-transparent" />
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-light tracking-tight">
-              {t('title')}
-            </h2>
+            <div className="space-y-4 sm:space-y-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-light text-light tracking-tight leading-tight">
+                {t('title')}
+              </h2>
 
-            <p className="text-base sm:text-lg text-light/70 leading-relaxed">
-              {t('subtitle')}
-            </p>
+              <p className="text-lg sm:text-xl text-gold/90 leading-relaxed font-medium">
+                {t('subtitle')}
+              </p>
 
-            <p className="text-sm sm:text-base text-light/80 leading-relaxed">
-              {tAbout('history')}
-            </p>
+              <p className="text-base sm:text-lg text-light/80 leading-relaxed">
+                {t('text')}
+              </p>
+            </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-4 sm:pt-6">
-              <div>
-                <div className="text-2xl sm:text-3xl font-light text-gold mb-1">50+</div>
-                <div className="text-[0.65rem] sm:text-xs text-light/60 uppercase tracking-wider">Empreendimentos</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-light text-gold mb-1">100%</div>
-                <div className="text-[0.65rem] sm:text-xs text-light/60 uppercase tracking-wider">Satisfação</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-light text-gold mb-1">20+</div>
-                <div className="text-[0.65rem] sm:text-xs text-light/60 uppercase tracking-wider">Anos</div>
+            {/* Logo Animation Area */}
+            <div className="pt-6 sm:pt-8">
+              <div className="glass-subtle rounded-2xl p-8 sm:p-10 flex items-center justify-center min-h-[240px] sm:min-h-[280px]">
+                {/* Placeholder para logo animado */}
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gold/20 blur-2xl rounded-full animate-pulse" />
+                  <div className="relative text-gold/40 text-center">
+                    <div className="text-5xl sm:text-6xl font-light mb-3">LP</div>
+                    <div className="text-xs sm:text-sm uppercase tracking-widest">Logo Animado</div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
-        </div>
 
-        {/* Differentials Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {differentials.map((differential, index) => (
-            <DifferentialCard
-              key={differential.key}
-              differential={differential}
-              index={index}
-            />
-          ))}
+          {/* Right Column: Differentials List */}
+          <div className="lg:pt-2">
+            <div className="space-y-0">
+              {differentials.map((differential, index) => (
+                <DifferentialItem
+                  key={differential.key}
+                  differential={differential}
+                  index={index}
+                  isVisible={isVisible}
+                />
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

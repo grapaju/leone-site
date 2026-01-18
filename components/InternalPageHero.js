@@ -1,8 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 export function InternalPageHero({ badge, title, subtitle, align = 'left' }) {
+  const isMobile = useIsMobile()
   const alignmentClasses = {
     left: 'text-left items-start',
     center: 'text-center items-center mx-auto',
@@ -16,17 +18,17 @@ export function InternalPageHero({ badge, title, subtitle, align = 'left' }) {
       {/* Content */}
       <div className={`relative max-w-[920px] w-full flex flex-col ${alignmentClasses[align]}`}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={isMobile ? false : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
           className="w-full"
         >
           {/* Top golden line */}
           <motion.div
             className="h-[1.5px] w-12 sm:w-14 bg-gradient-to-r from-gold via-gold/50 to-transparent mb-6 sm:mb-8"
-            initial={{ scaleX: 0, opacity: 0 }}
+            initial={isMobile ? false : { scaleX: 0, opacity: 0 }}
             animate={{ scaleX: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8, delay: 0.2 }}
             style={{ transformOrigin: 'left' }}
           />
 

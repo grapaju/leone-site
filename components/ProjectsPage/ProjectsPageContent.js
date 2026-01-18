@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { MapPin, Building2, Filter } from 'lucide-react'
 import { Link } from '@/lib/navigation'
 import { useState } from 'react'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const projects = [
   {
@@ -54,13 +55,14 @@ const projects = [
 
 function ProjectCard({ project, index }) {
   const t = useTranslations('projectsPage')
+  const isMobile = useIsMobile()
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      initial={isMobile ? false : { opacity: 0, y: 30 }}
+      whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+      viewport={isMobile ? undefined : { once: true }}
+      transition={isMobile ? { duration: 0 } : { duration: 0.5, delay: index * 0.1 }}
       className="group relative"
     >
       <div className="glass-subtle rounded-[24px] overflow-hidden hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 hover:-translate-y-2">
@@ -131,7 +133,7 @@ function ProjectCard({ project, index }) {
               <motion.span
                 className="inline-block ml-2"
                 initial={{ x: 0 }}
-                whileHover={{ x: 5 }}
+                whileHover={isMobile ? undefined : { x: 5 }}
               >
                 →
               </motion.span>
@@ -145,6 +147,7 @@ function ProjectCard({ project, index }) {
 
 export function ProjectsPageContent() {
   const t = useTranslations('projectsPage')
+  const isMobile = useIsMobile()
   const [filter, setFilter] = useState('all')
 
   const filters = ['all', 'completed', 'inProgress', 'launch']
@@ -163,19 +166,19 @@ export function ProjectsPageContent() {
     <main>
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32 section-dark">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={isMobile ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
             className="max-w-4xl"
           >
             {/* Accent line */}
             <motion.div
               className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mb-6"
-              initial={{ scaleX: 0 }}
+              initial={isMobile ? false : { scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={isMobile ? { duration: 0 } : { duration: 0.8, delay: 0.2 }}
             />
 
             {/* Title */}
@@ -191,9 +194,9 @@ export function ProjectsPageContent() {
             {/* Stats */}
             <div className="flex flex-wrap gap-8">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={isMobile ? false : { opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.4 }}
                 className="flex items-center gap-3"
               >
                 <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center">
@@ -205,9 +208,9 @@ export function ProjectsPageContent() {
                 </div>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={isMobile ? false : { opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.5 }}
                 className="flex items-center gap-3"
               >
                 <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center">
@@ -225,11 +228,11 @@ export function ProjectsPageContent() {
 
       {/* Filters */}
       <section className="py-8 section-dark border-y border-white/5">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={isMobile ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.6 }}
             className="flex items-center gap-4 flex-wrap"
           >
             <div className="flex items-center gap-2 text-light/60">
@@ -241,9 +244,9 @@ export function ProjectsPageContent() {
               {filters.map((filterItem, index) => (
                 <motion.button
                   key={filterItem}
-                  initial={{ opacity: 0, x: -10 }}
+                  initial={isMobile ? false : { opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={isMobile ? { duration: 0 } : { duration: 0.4, delay: index * 0.1 }}
                   onClick={() => setFilter(filterItem)}
                   className={`px-5 py-2.5 rounded-2xl text-sm font-medium transition-all duration-300 ${
                     filter === filterItem
@@ -261,7 +264,7 @@ export function ProjectsPageContent() {
 
       {/* Projects Grid */}
       <section className="py-24 md:py-32 section-dark">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           {filteredProjects.length > 0 ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {filteredProjects.map((project, index) => (
@@ -270,7 +273,7 @@ export function ProjectsPageContent() {
             </div>
           ) : (
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={isMobile ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >

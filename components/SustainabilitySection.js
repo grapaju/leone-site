@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Leaf, Sun, Droplets, Recycle } from 'lucide-react'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const sustainabilityFeatures = [
   { icon: Leaf, key: 'green', color: 'emerald' },
@@ -14,6 +15,7 @@ const sustainabilityFeatures = [
 
 export function SustainabilitySection() {
   const t = useTranslations('home')
+  const isMobile = useIsMobile()
 
   return (
     <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden">
@@ -27,10 +29,10 @@ export function SustainabilitySection() {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Text Side */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={isMobile ? false : { opacity: 0, x: -30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            viewport={isMobile ? undefined : { once: true }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
             className="space-y-6 sm:space-y-8"
           >
             {/* Accent line */}
@@ -60,10 +62,10 @@ export function SustainabilitySection() {
                 return (
                   <motion.div
                     key={feature.key}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    initial={isMobile ? false : { opacity: 0, y: 20 }}
+                    whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+                    viewport={isMobile ? undefined : { once: true }}
+                    transition={isMobile ? { duration: 0 } : { duration: 0.5, delay: index * 0.1 }}
                     className="space-y-2 sm:space-y-3"
                   >
                     <div
@@ -107,10 +109,10 @@ export function SustainabilitySection() {
 
           {/* Image Side */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={isMobile ? false : { opacity: 0, x: 30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            viewport={isMobile ? undefined : { once: true }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
             className="relative"
           >
             <div className="relative aspect-square rounded-[24px] overflow-hidden glass">
@@ -126,10 +128,10 @@ export function SustainabilitySection() {
 
             {/* Floating stat card */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              initial={isMobile ? false : { opacity: 0, scale: 0.8 }}
+              whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
+              viewport={isMobile ? undefined : { once: true }}
+              transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.3 }}
               className="absolute -bottom-6 -left-6 glass-form rounded-2xl p-6"
             >
               <div className="flex items-center gap-4">
@@ -142,10 +144,10 @@ export function SustainabilitySection() {
 
             {/* Floating badge */}
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              initial={isMobile ? false : { opacity: 0, y: -20 }}
+              whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+              viewport={isMobile ? undefined : { once: true }}
+              transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.5 }}
               className="absolute -top-4 -right-4 glass rounded-full px-6 py-3"
             >
               <div className="text-xs uppercase tracking-wider text-green-400 font-medium">

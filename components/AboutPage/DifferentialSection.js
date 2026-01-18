@@ -5,11 +5,14 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { MapPin, Award, Shield, Leaf } from 'lucide-react'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 export function DifferentialSection() {
   const t = useTranslations('about.differential')
   const ref = useRef(null)
+  const isMobile = useIsMobile()
   const isInView = useInView(ref, { once: true, margin: "-80px" })
+  const inView = isMobile ? true : isInView
 
   const items = [
     { key: 'locations', icon: MapPin },
@@ -19,7 +22,7 @@ export function DifferentialSection() {
   ]
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 section-dark relative overflow-hidden">
+    <section ref={ref} className="py-24 md:py-32 px-4 sm:px-6 section-dark relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] bg-gold rounded-full blur-[140px]" />
@@ -28,18 +31,18 @@ export function DifferentialSection() {
       <div className="container mx-auto max-w-[1120px] relative z-10">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          initial={isMobile ? false : { opacity: 0, y: 25 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={isMobile ? { duration: 0 } : { duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 md:mb-20"
         >
           {/* Decorative line with glow */}
           <div className="relative mb-8">
             <motion.div
               className="w-20 h-[2px] bg-gradient-to-r from-gold via-gold/50 to-transparent"
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.9, delay: 0.2 }}
+              initial={isMobile ? false : { scaleX: 0, opacity: 0 }}
+              animate={inView ? { scaleX: 1, opacity: 1 } : {}}
+              transition={isMobile ? { duration: 0 } : { duration: 0.9, delay: 0.2 }}
               style={{ transformOrigin: 'left' }}
             />
             <div className="absolute inset-0 w-20 h-[2px] bg-gradient-to-r from-gold to-transparent blur-sm" />
@@ -63,9 +66,9 @@ export function DifferentialSection() {
             {items.map((item, index) => (
               <motion.div
                 key={item.key}
-                initial={{ opacity: 0, x: -25 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 + (0.15 * index), ease: [0.22, 1, 0.36, 1] }}
+                initial={isMobile ? false : { opacity: 0, x: -25 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: 0.2 + (0.15 * index), ease: [0.22, 1, 0.36, 1] }}
                 className="flex gap-8 items-start group"
               >
                 {/* Icon container with premium glass effect */}
@@ -84,7 +87,7 @@ export function DifferentialSection() {
                     {/* Accent line */}
                     <div className="w-12 h-[2px] bg-gradient-to-r from-gold/60 to-transparent mb-4 group-hover:w-16 transition-all duration-500" />
                     
-                    <p className="text-base md:text-lg leading-[1.75] text-light/85 text-justify">
+                    <p className="text-base md:text-lg leading-[1.75] text-light/85 text-left">
                       {t(`items.${item.key}`)}
                     </p>
                   </div>

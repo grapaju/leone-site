@@ -20,6 +20,7 @@ import {
 } from 'lucide-react'
 import { Link } from '@/lib/navigation'
 import { useState } from 'react'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 // Dados dos projetos
 const projectsData = {
@@ -189,6 +190,7 @@ const projectsData = {
 
 function ProjectHero({ projectId, projectData }) {
   const t = useTranslations('projectsPage')
+  const isMobile = useIsMobile()
 
   return (
     <section className="relative min-h-screen pt-20 section-dark overflow-hidden">
@@ -203,11 +205,11 @@ function ProjectHero({ projectId, projectData }) {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-base/80 via-transparent to-dark-base/40" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 pt-16 pb-24">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-16 pb-24">
         <motion.nav
-          initial={{ opacity: 0, y: 20 }}
+          initial={isMobile ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={isMobile ? { duration: 0 } : { duration: 0.6 }}
           className="flex items-center gap-2 text-sm text-light/70 mb-8"
         >
           <Link href="/" className="hover:text-light transition-colors">Início</Link>
@@ -219,9 +221,9 @@ function ProjectHero({ projectId, projectData }) {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={isMobile ? false : { opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
           >
             <Badge variant={projectData.status} className="mb-6">
               {t(`status.${projectData.status}`)}
@@ -261,9 +263,9 @@ function ProjectHero({ projectId, projectData }) {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={isMobile ? false : { opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8, delay: 0.2 }}
             className="relative"
           >
             {projectData.images[1] && (
@@ -286,14 +288,15 @@ function ProjectHero({ projectId, projectData }) {
 }
 
 function ProjectHighlights({ projectData }) {
+  const isMobile = useIsMobile()
   return (
     <section className="py-24 section-dark">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={isMobile ? false : { opacity: 0, y: 30 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+          viewport={isMobile ? undefined : { once: true }}
+          transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
           className="text-center mb-16"
         >
           <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mx-auto mb-6" />
@@ -307,10 +310,10 @@ function ProjectHighlights({ projectData }) {
           {projectData.highlights.map((highlight, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={isMobile ? false : { opacity: 0, y: 30 }}
+              whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+              viewport={isMobile ? undefined : { once: true }}
+              transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
               className="glass-subtle rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500"
             >
               <div className="w-16 h-16 bg-gold/10 border border-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -328,17 +331,18 @@ function ProjectHighlights({ projectData }) {
 
 function ProjectAbout({ projectId, projectData }) {
   const t = useTranslations('projectsPage')
+  const isMobile = useIsMobile()
   const isDetailed = projectData.description && typeof projectData.description === 'object'
 
   return (
     <section className="py-24 section-dark">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={isMobile ? false : { opacity: 0, x: -30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            viewport={isMobile ? undefined : { once: true }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
           >
             <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mb-6" />
             <h2 className="text-4xl font-light text-light mb-6">Sobre o Empreendimento</h2>
@@ -379,10 +383,10 @@ function ProjectAbout({ projectId, projectData }) {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={isMobile ? false : { opacity: 0, x: 30 }}
+            whileInView={isMobile ? undefined : { opacity: 1, x: 0 }}
+            viewport={isMobile ? undefined : { once: true }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
             <div className="grid grid-cols-2 gap-4">
@@ -446,15 +450,16 @@ function ProjectAbout({ projectId, projectData }) {
 
 function ProjectAmenities({ projectData }) {
   if (!projectData.amenities) return null
+  const isMobile = useIsMobile()
 
   return (
     <section className="py-24 section-dark border-y border-white/5">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={isMobile ? false : { opacity: 0, y: 30 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+          viewport={isMobile ? undefined : { once: true }}
+          transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
           className="text-center mb-16"
         >
           <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mx-auto mb-6" />
@@ -468,10 +473,10 @@ function ProjectAmenities({ projectData }) {
           {projectData.amenities.map((amenity, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
+              initial={isMobile ? false : { opacity: 0, y: 30 }}
+              whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+              viewport={isMobile ? undefined : { once: true }}
+              transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: index * 0.05 }}
               className="glass-subtle rounded-2xl p-6 text-center hover:shadow-xl hover:shadow-gold/10 transition-all duration-500"
             >
               <div className="w-12 h-12 bg-gold/10 border border-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -488,15 +493,16 @@ function ProjectAmenities({ projectData }) {
 
 function ProjectGallery({ projectData }) {
   const [activeTab, setActiveTab] = useState('photos')
+  const isMobile = useIsMobile()
 
   return (
     <section className="py-24 section-dark">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={isMobile ? false : { opacity: 0, y: 30 }}
+          whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+          viewport={isMobile ? undefined : { once: true }}
+          transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
           className="text-center mb-16"
         >
           <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mx-auto mb-6" />
@@ -533,19 +539,19 @@ function ProjectGallery({ projectData }) {
 
         <motion.div
           key={activeTab}
-          initial={{ opacity: 0, y: 20 }}
+          initial={isMobile ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={isMobile ? { duration: 0 } : { duration: 0.6 }}
         >
           {activeTab === 'photos' ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projectData.images?.map((image, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={isMobile ? false : { opacity: 0, scale: 0.9 }}
+                  whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
+                  viewport={isMobile ? undefined : { once: true }}
+                  transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: index * 0.1 }}
                   className="glass-subtle rounded-2xl overflow-hidden p-4 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500"
                 >
                   <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
@@ -564,10 +570,10 @@ function ProjectGallery({ projectData }) {
               {projectData.plantImages?.map((plantImage, index) => (
                 <motion.div
                   key={`plant-${index}`}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  initial={isMobile ? false : { opacity: 0, scale: 0.9 }}
+                  whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
+                  viewport={isMobile ? undefined : { once: true }}
+                  transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: index * 0.2 }}
                   className="glass-subtle rounded-2xl overflow-hidden p-4 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500"
                 >
                   <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-4">
@@ -613,10 +619,10 @@ function ProjectGallery({ projectData }) {
               [1, 2].map((item) => (
                 <motion.div
                   key={`plan-${item}`}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: item * 0.2 }}
+                  initial={isMobile ? false : { opacity: 0, scale: 0.9 }}
+                  whileInView={isMobile ? undefined : { opacity: 1, scale: 1 }}
+                  viewport={isMobile ? undefined : { once: true }}
+                  transition={isMobile ? { duration: 0 } : { duration: 0.6, delay: item * 0.2 }}
                   className="glass-subtle rounded-2xl overflow-hidden p-6 border-2 border-dashed border-gold/20"
                 >
                   <div className="relative aspect-[4/3] rounded-xl flex items-center justify-center mb-4">

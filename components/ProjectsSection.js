@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -30,29 +30,17 @@ const projects = [
     daysToDelivery: null,
     progress: 100,
   },
-  {
-    id: 'residencialNacoes',
-    image: '/imagens/Residencial das Nacoes/fachada-residencial-nacoes-frontal.jpg',
-    status: 'completed',
-    daysToDelivery: null,
-    progress: 100,
-  },
 ]
 
 function ProjectCard({ project, index }) {
   const t = useTranslations('projects')
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative"
-    >
-      <div className="glass-subtle rounded-[24px] overflow-hidden hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 hover:-translate-y-2">
+    <article className="group relative">
+      <Link href={`/empreendimentos/${project.id}`} className="block">
+        <div className="glass-subtle rounded-[20px] overflow-hidden hover:shadow-2xl hover:shadow-black/40 transition-all duration-500 hover:-translate-y-2 cursor-pointer">
         {/* Image */}
-        <div className="relative aspect-[16/11] overflow-hidden">
+        <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={project.image}
             alt={t(`items.${project.id}.name`)}
@@ -87,9 +75,9 @@ function ProjectCard({ project, index }) {
         </div>
 
         {/* Content */}
-        <div className="p-5 sm:p-7 space-y-3 sm:space-y-4">
-          <div>
-            <h3 className="text-xl sm:text-2xl font-medium text-light mb-2 group-hover:text-gold transition-colors">
+        <div className="p-6 sm:p-7 space-y-4 sm:space-y-5">
+          <div className="space-y-3">
+            <h3 className="text-lg sm:text-xl font-medium text-light group-hover:text-gold transition-colors">
               {t(`items.${project.id}.name`)}
             </h3>
             <div className="flex items-center gap-2 text-xs sm:text-sm text-light/60">
@@ -98,78 +86,84 @@ function ProjectCard({ project, index }) {
             </div>
           </div>
 
-          <p className="text-sm sm:text-base text-light/70 line-clamp-3 leading-relaxed">
+          <p className="text-xs sm:text-sm text-light/70 leading-relaxed min-h-[4rem]">
             {t(`items.${project.id}.description`)}
           </p>
 
-          <Button
-            asChild
-            variant="ghost"
-            className="w-full text-gold hover:text-dark-base hover:bg-gold group/btn"
-          >
-            <Link href={`/empreendimentos/${project.id}`}>
-              {t('cta')}
-              <motion.span
-                className="inline-block ml-2"
-                initial={{ x: 0 }}
-                whileHover={{ x: 5 }}
-              >
-                →
-              </motion.span>
-            </Link>
-          </Button>
+          <div className="pt-2 border-t border-light/10">
+            <div className="flex items-center justify-between text-gold text-sm font-medium group-hover:translate-x-1 transition-transform">
+              <span>{t('cta')}</span>
+              <span>→</span>
+            </div>
+          </div>
         </div>
       </div>
-    </motion.article>
+      </Link>
+    </article>
   )
 }
 
 export function ProjectsSection() {
   const t = useTranslations('projects')
+  const [isVisible, setIsVisible] = useState(false)
+  const headerRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current)
+    }
+
+    return () => {
+      if (headerRef.current) {
+        observer.unobserve(headerRef.current)
+      }
+    }
+  }, [])
 
   return (
-    <section id="empreendimentos" className="py-16 sm:py-24 md:py-32 section-dark">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section id="empreendimentos" className="py-16 sm:py-20 md:py-28 section-dark">
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         {/* Header */}
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-12 sm:mb-16"
-        >
+        <header ref={headerRef} className="max-w-3xl mb-12 sm:mb-16">
           {/* Accent line */}
-          <div className="w-14 h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mb-4 sm:mb-6" />
+          <div 
+            className={`h-0.5 bg-gradient-to-r from-gold via-gold/40 to-transparent mb-4 sm:mb-6 transition-all duration-700 ease-out ${
+              isVisible ? 'w-14 opacity-100' : 'w-0 opacity-0'
+            }`}
+          />
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-light mb-3 sm:mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl font-light text-light mb-3 sm:mb-4 tracking-tight">
             {t('title')}
           </h2>
           <p className="text-base sm:text-lg text-light/70 leading-relaxed">
             {t('subtitle')}
           </p>
-        </motion.header>
+        </header>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16 max-w-[1200px] mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
 
         {/* View All Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center"
-        >
+        <div className="text-center">
           <Button asChild variant="gold-solid" size="lg">
             <Link href="/empreendimentos">
               {t('viewAll')}
             </Link>
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

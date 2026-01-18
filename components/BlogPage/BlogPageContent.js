@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Calendar, Clock, Search, Filter } from 'lucide-react'
 import { Link } from '@/lib/navigation'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 // Dados dos posts do blog
 const blogPosts = [
@@ -106,15 +107,16 @@ const blogPosts = [
 const categories = ['Todos', 'Investimentos', 'Arquitetura', 'Lifestyle']
 
 function BlogCard({ post, index, locale, featured = false }) {
+  const isMobile = useIsMobile()
   const title = post[`title${locale.charAt(0).toUpperCase() + locale.slice(1)}`] || post.titlePt
   const excerpt = post[`excerpt${locale.charAt(0).toUpperCase() + locale.slice(1)}`] || post.excerptPt
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      initial={isMobile ? false : { opacity: 0, y: 30 }}
+      whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+      viewport={isMobile ? undefined : { once: true }}
+      transition={isMobile ? { duration: 0 } : { duration: 0.5, delay: index * 0.1 }}
       className={`group ${featured ? 'lg:col-span-2' : ''}`}
     >
       <Link href={`/blog/${post.slug}`} className="block">
@@ -190,6 +192,7 @@ function BlogCard({ post, index, locale, featured = false }) {
 }
 
 export function BlogPageContent() {
+  const isMobile = useIsMobile()
   const [selectedCategory, setSelectedCategory] = useState('Todos')
   const [searchQuery, setSearchQuery] = useState('')
 
@@ -210,11 +213,11 @@ export function BlogPageContent() {
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-base via-dark-base/95 to-transparent" />
         
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={isMobile ? false : { opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
             {/* Accent line */}
@@ -271,16 +274,16 @@ export function BlogPageContent() {
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)'
       }}>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           {filteredPosts.length > 0 ? (
             <div className="space-y-12">
               {/* Featured Post */}
               {featuredPost && (
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                  initial={isMobile ? false : { opacity: 0, y: 30 }}
+                  whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+                  viewport={isMobile ? undefined : { once: true }}
+                  transition={isMobile ? { duration: 0 } : { duration: 0.6 }}
                 >
                   <BlogCard post={featuredPost} index={0} locale="pt" featured />
                 </motion.div>
@@ -297,10 +300,10 @@ export function BlogPageContent() {
             </div>
           ) : (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={isMobile ? false : { opacity: 0, y: 30 }}
+              whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+              viewport={isMobile ? undefined : { once: true }}
+              transition={isMobile ? { duration: 0 } : { duration: 0.6 }}
               className="text-center py-16"
             >
               <div className="w-16 h-16 bg-glass rounded-full flex items-center justify-center mx-auto mb-6">
