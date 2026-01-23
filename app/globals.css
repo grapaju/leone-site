@@ -68,7 +68,7 @@
     @apply font-raleway;
     background: radial-gradient(circle at top, #2B2116 0%, #1A140E 65%);
     color: rgba(255, 250, 245, 0.88);
-    line-height: 1.65;
+    line-height: 1.75;
     min-height: 100vh;
     overflow-x: hidden;
   }

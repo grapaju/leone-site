@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { useIsMobile } from '@/lib/useIsMobile'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { ChevronDown } from 'lucide-react'
 
 export function Hero() {
   const t = useTranslations('hero')
@@ -69,18 +70,18 @@ export function Hero() {
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 md:space-y-10">
           {/* Badge */}
           <div className="inline-block">
-            <span className="inline-block glass-subtle rounded-full px-4 py-2 md:px-6 md:py-3 text-[0.65rem] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.2em] text-gold font-medium">
+            <span className="inline-block glass-subtle rounded-full px-4 py-2 md:px-6 md:py-3 text-[0.6rem] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-gold font-medium">
               {t('badge')}
             </span>
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-light tracking-tight text-light leading-snug px-4 sm:px-0">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-light leading-tight sm:leading-tight md:leading-tight px-4 sm:px-0">
             {t('title')}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-light/85 max-w-2xl mx-auto leading-loose px-4 sm:px-6">
+          <p className="text-base sm:text-lg md:text-xl text-light/85 max-w-3xl mx-auto leading-relaxed sm:leading-loose px-4 sm:px-6">
             {t('subtitle')}
           </p>
 
@@ -98,14 +99,17 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator - apenas desktop */}
-      {!isMobile && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gold/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 bg-gold rounded-full" />
-          </div>
-        </div>
-      )}
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce duration-[2000ms]">
+        <button 
+          onClick={scrollToProjects}
+          className="text-light/50 hover:text-gold transition-colors p-2 flex flex-col items-center gap-1"
+          aria-label="Rolar para baixo"
+        >
+          <span className="text-[10px] uppercase tracking-widest text-gold/60 font-medium">Explore</span>
+          <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-gold/80" strokeWidth={1} />
+        </button>
+      </div>
     </section>
   )
 }

@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { MapPin, Calendar, TrendingUp } from 'lucide-react'
 import { Link } from '@/lib/navigation'
+import { motion } from 'framer-motion' // Added framer-motion
 
 const projects = [
   {
@@ -36,11 +37,17 @@ function ProjectCard({ project, index }) {
   const t = useTranslations('projects')
 
   return (
-    <article className="group relative">
-      <Link href={`/empreendimentos/${project.id}`} className="block">
-        <div className="glass-subtle rounded-[20px] overflow-hidden hover:shadow-2xl hover:shadow-black/40 transition-all duration-500 hover:-translate-y-2 cursor-pointer">
+    <motion.article 
+      variants={{
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+      }}
+      className="group relative h-full"
+    >
+      <Link href={`/empreendimentos/${project.id}`} className="block h-full">
+        <div className="glass rounded-[20px] overflow-hidden border border-white/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 hover:-translate-y-2 cursor-pointer h-full flex flex-col">
         {/* Image */}
-        <div className="relative aspect-[16/10] overflow-hidden">
+        <div className="relative aspect-[16/10] overflow-hidden shrink-0">
           <Image
             src={project.image}
             alt={t(`items.${project.id}.name`)}
@@ -75,22 +82,22 @@ function ProjectCard({ project, index }) {
         </div>
 
         {/* Content */}
-        <div className="p-6 sm:p-7 space-y-4 sm:space-y-5">
+        <div className="p-6 sm:p-7 space-y-4 sm:space-y-5 flex-1 flex flex-col">
           <div className="space-y-3">
-            <h3 className="text-lg sm:text-xl font-medium text-light group-hover:text-gold transition-colors">
+            <h3 className="text-lg sm:text-xl font-medium text-light group-hover:text-gold transition-colors leading-snug">
               {t(`items.${project.id}.name`)}
             </h3>
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-light/60">
-              <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <div className="flex items-center gap-2 text-sm sm:text-base text-light/60">
+              <MapPin className="w-4 h-4 sm:w-4 sm:h-4" />
               <span>{t(`items.${project.id}.location`)}</span>
             </div>
           </div>
 
-          <p className="text-xs sm:text-sm text-light/70 leading-relaxed min-h-[4rem]">
+          <p className="text-sm sm:text-base text-light/70 leading-relaxed flex-1">
             {t(`items.${project.id}.description`)}
           </p>
 
-          <div className="pt-2 border-t border-light/10">
+          <div className="pt-2 border-t border-light/10 mt-auto">
             <div className="flex items-center justify-between text-gold text-sm font-medium group-hover:translate-x-1 transition-transform">
               <span>{t('cta')}</span>
               <span>→</span>
@@ -99,7 +106,7 @@ function ProjectCard({ project, index }) {
         </div>
       </div>
       </Link>
-    </article>
+    </motion.article>
   )
 }
 
@@ -130,8 +137,11 @@ export function ProjectsSection() {
   }, [])
 
   return (
-    <section id="empreendimentos" className="py-16 sm:py-20 md:py-28 section-dark">
-      <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
+    <section id="empreendimentos" className="py-16 sm:py-20 md:py-28 relative overflow-hidden bg-[#1C150F]">
+      {/* Background Gradient for Hero continuity - optional if you want a subtle transition */}
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-[#2B2116]/40 via-transparent to-transparent pointer-events-none" /> */}
+      
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1200px] relative z-10">
         {/* Header */}
         <header ref={headerRef} className="max-w-3xl mb-12 sm:mb-16">
           {/* Accent line */}
@@ -141,24 +151,38 @@ export function ProjectsSection() {
             }`}
           />
           
-          <h2 className="text-3xl sm:text-4xl md:text-4xl font-light text-light mb-3 sm:mb-4 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-light tracking-tight leading-relaxed mb-4 sm:mb-5">
             {t('title')}
           </h2>
-          <p className="text-base sm:text-lg text-light/70 leading-relaxed">
+          <p className="text-lg sm:text-xl text-light/70 leading-relaxed">
             {t('subtitle')}
           </p>
         </header>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16 max-w-[1200px] mx-auto">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16 max-w-[1200px] mx-auto"
+        >
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
-        </div>
+        </motion.div>
 
         {/* View All Button */}
         <div className="text-center">
-          <Button asChild variant="gold-solid" size="lg">
+          <Button asChild variant="gold-solid" size="lg" className="hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-gold/20">
             <Link href="/empreendimentos">
               {t('viewAll')}
             </Link>

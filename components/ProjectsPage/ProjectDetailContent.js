@@ -33,9 +33,6 @@ const projectsData = {
     parking: '2-4',
     floors: '15 pavimentos',
     unitsPerFloor: '2 por andar',
-    totalUnits: '30 apartamentos',
-    address: 'Rua José Venâncio dos Santos, 100',
-    neighborhood: 'Pioneiros (Pontal Norte)',
     distanceBeach: '300m da praia',
     images: [
       '/imagens/Mirante do Atlantico/Edificio-Mirante-do-Atlantico-Balneario-Camboriu-600x450.jpg',
@@ -67,9 +64,8 @@ const projectsData = {
       'Home cinema'
     ],
     description: {
-      main: 'O Mirante do Atlântico é um empreendimento residencial de alto padrão desenvolvido pela Leone Construtora, entregue em 2012. Localizado no tranquilo bairro Pioneiros (Pontal Norte), a apenas 300 metros da praia, oferece vista exuberante para o mar em uma das áreas mais valorizadas de Balneário Camboriú.',
-      building: 'Torre única com 15 pavimentos e apenas 2 apartamentos por andar, garantindo privacidade e exclusividade. Próximo à roda-gigante FG Big Wheel e à Praia Central, em uma localização estratégica que combina tranquilidade residencial com fácil acesso aos principais pontos da cidade.',
-      units: 'Apartamentos típicos com 3 quartos (sendo 1 suíte), área privativa entre 119 m² e 140 m², sacada com churrasqueira e até 4 vagas de garagem. Muitas unidades são oferecidas mobiliadas ou semi-mobiliadas.'
+      main: 'O Mirante do Atlântico é um empreendimento residencial entregue pela Leone Construtora, concebido para oferecer conforto, funcionalidade e qualidade de vida em uma das regiões mais consolidadas de Balneário Camboriú. Seu projeto prioriza a boa distribuição dos espaços e a integração entre moradia e lazer, atendendo às necessidades do dia a dia com eficiência.',
+      building: 'O empreendimento conta com apartamentos de 3 dormitórios, áreas comuns completas voltadas ao lazer, convivência e bem-estar, além de infraestrutura planejada para uso contínuo, como espaços de recreação, esporte e relaxamento. Um conjunto pensado para proporcionar praticidade, durabilidade e valorização ao longo do tempo.'
     }
   },
   palazzoDelMare: {
@@ -101,11 +97,15 @@ const projectsData = {
       '/imagens/Portal do Municipios/fachada-portal-dos-municipios-001.png',
     ],
     highlights: [
-      { icon: MapPin, title: 'Centro da Cidade', description: 'Localização estratégica' },
-      { icon: Building2, title: 'Segurança Total', description: 'Portaria 24h' },
+      { icon: MapPin, title: 'Localização', description: 'Região privilegiada' },
+      { icon: Building2, title: 'Segurança Total', description: 'Sistema de Câmeras' },
       { icon: Car, title: 'Estacionamento', description: 'Garagem coberta' },
       { icon: Home, title: 'Bem-estar', description: 'Espaços de convivência' },
-    ]
+    ],
+    description: {
+      main: 'Localizado no Bairro dos Municípios, o empreendimento foi pensado para quem busca praticidade no dia a dia, conforto e uma estrutura completa para viver bem.',
+      building: 'Com apartamentos de 2 ou 3 dormitórios, áreas de lazer e convivência, e soluções que unem segurança, economia e sustentabilidade, o projeto valoriza o uso inteligente dos espaços e a qualidade de vida dos moradores. Cada escolha contribui para uma rotina mais funcional, segura e agradável.'
+    }
   },
   residencialNacoes: {
     year: 2005,
@@ -335,7 +335,7 @@ function ProjectAbout({ projectId, projectData }) {
   const isDetailed = projectData.description && typeof projectData.description === 'object'
 
   return (
-    <section className="py-24 section-dark">
+    <section className="py-24" style={{ backgroundColor: '#1C150F' }}>
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <motion.div
@@ -362,11 +362,6 @@ function ProjectAbout({ projectId, projectData }) {
             ) : (
               <div className="space-y-4 text-lg text-light/80 leading-relaxed">
                 <p>{t(`projects.${projectId}.description`)}</p>
-                <p>
-                  Desenvolvido com materiais de primeira linha e tecnologia de ponta, 
-                  este empreendimento representa o que há de mais moderno em construção civil. 
-                  Cada detalhe foi pensado para proporcionar conforto, segurança e valorização.
-                </p>
               </div>
             )}
             
@@ -402,7 +397,7 @@ function ProjectAbout({ projectId, projectData }) {
               <div className="glass-subtle rounded-2xl p-6">
                 <CheckCircle className="w-8 h-8 text-green-500 mb-4" />
                 <h3 className="text-lg font-medium text-light mb-2">Qualidade</h3>
-                <p className="text-light/70">Padrão Leone Premium</p>
+                <p className="text-light/70">Padrão Leone</p>
               </div>
               <div className="glass-subtle rounded-2xl p-6">
                 <MapPin className="w-8 h-8 text-gold mb-4" />

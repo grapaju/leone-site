@@ -85,7 +85,7 @@ export function CitySection() {
   }, [])
 
   return (
-    <section className="py-12 sm:py-20 md:py-28 section-dark relative overflow-hidden">
+    <section className="py-12 sm:py-20 md:py-28 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1200px]">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Text Side */}
@@ -98,11 +98,12 @@ export function CitySection() {
               }`}
             />
 
-            <h2 className="text-2xl sm:text-4xl md:text-4xl font-light text-light tracking-tight leading-tight">
-              Investir em Balneário Camboriú
+            <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-light text-light tracking-tight leading-tight">
+              Investir em <br />
+              <span className="font-medium text-gold">Balneário Camboriú</span>
             </h2>
 
-            <p className="text-sm sm:text-lg text-light/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-light/70 leading-relaxed">
               Balneário Camboriú é um dos mercados imobiliários mais sólidos do Brasil. Infraestrutura, qualidade de vida e constante valorização tornam a cidade um polo estratégico para quem busca segurança patrimonial e retorno consistente. A Leone Pavan atua nesse cenário com projetos alinhados à vocação da cidade e às expectativas do investidor moderno.
             </p>
 
